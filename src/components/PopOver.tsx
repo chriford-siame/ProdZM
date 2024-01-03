@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 export default function PopOver() {
     return (
-        <div className="flex justify-center items-center min-h-screen">
+        <div className="">
             <Popover>
                 <PopoverTrigger>
                     <Button variant="default">Test Shadcn Button</Button>
