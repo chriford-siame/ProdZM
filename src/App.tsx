@@ -1,9 +1,10 @@
 import React from 'react';
+import PopOver from './components/PopOver';
 
 function App() {
   return (
-    <div className=" text-3xl text-red-500 font-bold underline"> 
-        Hello world
+    <div className=" text-3xl font-bold underline"> 
+        <PopOver />
     </div>
   );
 }
