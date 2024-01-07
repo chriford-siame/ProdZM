@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaBars } from 'react-icons/fa'
-import SidebarTriggerButton from './SidebarTriggerButton'
-import { Sidebar } from './Sidebar'
+import SidebarTriggerButton from './Sidebar/SidebarTriggerButton'
+import { Sidebar } from './Sidebar/Sidebar'
 
 export default function Navbar() {
     return (
