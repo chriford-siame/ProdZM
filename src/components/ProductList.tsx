@@ -1,7 +1,11 @@
 import React from 'react'
+import Herosection from './Herosection'
 
 export default function ProductList() {
   return (
-    <div>ProductList</div>
+    <React.Fragment>
+      <Herosection />
+      <div>ProductList</div>
+    </React.Fragment>
   )
 }
