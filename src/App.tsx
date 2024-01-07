@@ -1,15 +1,15 @@
 import React from 'react';
 import { ScrollArea } from './components/ui/scroll-area';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ProductList from './components/ProductList';
-import ProductDetail from './components/ProductDetail';
-import ProductEdit from './components/ProductEdit';
+import ProductList from './components/Product/ProductList';
+import ProductDetail from './components/Product/ProductDetail';
+import ProductEdit from './components/Product/ProductEdit';
 import NoPage from './components/NoPage';
-import ProductCreate from './components/ProductCreate';
-import ProductStatus from './components/ProductStatus';
-import ProductDelete from './components/ProductDelete';
+import ProductCreate from './components/Product/ProductCreate';
+import ProductStatus from './components/Product/ProductStatus';
+import ProductDelete from './components/Product/ProductDelete';
 import Navbar from './components/Navbar';
-import SidebarTriggerButton from './components/SidebarTriggerButton';
+import SidebarTriggerButton from './components/Sidebar/SidebarTriggerButton';
 
 function App() {
   
