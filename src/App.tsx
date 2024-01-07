@@ -9,10 +9,12 @@ import ProductCreate from './components/ProductCreate';
 import ProductStatus from './components/ProductStatus';
 import ProductDelete from './components/ProductDelete';
 import Navbar from './components/Navbar';
+import SidebarTriggerButton from './components/SidebarTriggerButton';
 
 function App() {
+  
   return (
-    <React.Fragment>
+    <>
       <Navbar />
       <BrowserRouter>
         <Routes>
@@ -25,7 +27,7 @@ function App() {
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
-    </React.Fragment>
+    </>
   );
 }
 
