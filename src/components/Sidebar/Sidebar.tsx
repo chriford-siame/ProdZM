@@ -29,20 +29,22 @@ export function Sidebar() {
                 <SidebarTriggerButton />
                 <SheetContent side={'left'}>
                     <SheetHeader className='-mt-3 border-b border-opacity-[0.3]'>
-                        <SheetTitle className='text-2xl pl-4'>Menu</SheetTitle>
+                        <SheetTitle className='text-2xl pl-4'>
+
+                        </SheetTitle>
                     </SheetHeader>
                     <div className="grid gap-4 py-4">
-                        <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
-                            <a href='/signup' className="flex justify-start gap-2">
+                        <a href='/dashboard/' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
+                            <div className="flex justify-start gap-2">
                                 <MdDashboard size={20} className='text-gray-700' /> <span className='-mt-[2px]'>Dashboard</span>
-                            </a>
+                            </div>
                         </a>
-                        <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
+                        <a href='/products' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
                             <div className="flex justify-start gap-2">
                                 <MdViewList size={20} className='text-gray-700' /> <span className='-mt-[2px]'>Products</span>
                             </div>
                         </a>
-                        <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
+                        <a href='/products/basket' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
                             <div className="flex justify-start gap-2">
                                 <MdShoppingCart size={20} className='text-gray-700' /> <span className='-mt-[2px]'>My Cart</span>
                             </div>

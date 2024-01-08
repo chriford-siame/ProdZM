@@ -12,6 +12,8 @@ import Navbar from './components/Navbar';
 import SidebarTriggerButton from './components/Sidebar/SidebarTriggerButton';
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
+import Dashboard from './components/Dashboard/Dashboard';
+import MyCart from './components/Product/MyCart';
 
 function App() {
   
@@ -22,7 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductList />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/products/basket" element={<MyCart />} />
           <Route path="/product/detail" element={<ProductDetail />} />
           <Route path="/product/edit" element={<ProductEdit />} />
           <Route path="/product/delete" element={<ProductDelete />} />
