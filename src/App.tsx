@@ -10,6 +10,8 @@ import ProductStatus from './components/Product/ProductStatus';
 import ProductDelete from './components/Product/ProductDelete';
 import Navbar from './components/Navbar';
 import SidebarTriggerButton from './components/Sidebar/SidebarTriggerButton';
+import Signup from './components/Auth/Signup';
+import Login from './components/Auth/Login';
 
 function App() {
   
@@ -19,6 +21,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProductList />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/product/detail" element={<ProductDetail />} />
           <Route path="/product/edit" element={<ProductEdit />} />
           <Route path="/product/delete" element={<ProductDelete />} />
