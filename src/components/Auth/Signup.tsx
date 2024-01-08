@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { GoogleLogin } from '@react-oauth/google'
 import { Button } from "../ui/button"
 import {
   Card,
@@ -11,6 +11,7 @@ import {
 } from "../ui/card"
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
+import { jwtDecode } from 'jwt-decode'
 
 export default function Signup() {
   return (
@@ -47,9 +48,12 @@ export default function Signup() {
             <span>Or</span>
             <span className='border w-full ml-1 h-[1px]'></span>
           </div>
-          <Button variant={'secondary'} className='w-full flex justify-evently gap-10'>
-            <span><img src={require('src/assets/images/google-logo.jpg')} width={30} height={30} alt="Google-logo" /></span>
-            <span className='text-gray-500'>Continue with google</span>
+          <Button onClick={() => {
+            
+          }} variant={'secondary'} className='border w-full flex justify-center gap-10'>
+            <span><img src={require('src/assets/images/google-logo.jpg')} width={40} height={40} alt="Google-logo" /></span>
+
+            <span className='flex float-end hover:text-gray-500 text-gray-500 '>Signup with google</span>
           </Button>
         </CardFooter>
       </Card>
