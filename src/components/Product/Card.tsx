@@ -1,0 +1,72 @@
+import React from 'react'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "../ui/card"
+import { Button } from '../ui/button'
+import { FaBookmark, FaEye, FaStar } from 'react-icons/fa'
+import { useNavigate } from "react-router-dom";
+
+
+interface Product {
+    name: string;
+    description: string;
+    
+}
+interface IProps {
+    product: string;
+}
+export default function ProductCard() {
+    const navigate = useNavigate();
+
+    const nextPath = (id: string | number) => {
+        let nextPath = `/product/detail/${id}`;
+        navigate(nextPath); 
+    }
+
+    return (
+        <Card className=' shadow-xl hover:shadow-2xl'>
+            <img className='w-full' src={require('src/assets/images/product/product-1.png')} alt="" />
+            <CardHeader className=' items-center pt-1'>
+                <div className='border-t mx-10 w-full'></div>
+                <CardTitle className=' text-[#7c7a7a]'>
+                    <a href='/product/detail'>Watch</a>
+                </CardTitle>
+                <div className='border-t mx-10 w-full'></div>
+                {/* <CardDescription>Card Description</CardDescription> */}
+            </CardHeader>
+            <CardContent className='w-full pb-0'>
+                <div className='flex justify-between px-1  text-[#7c7a7a] text-sm'>
+                    <p>Price:</p>
+                    <p>$120.00</p>
+                </div>
+                <div className='flex justify-between px-1  text-[#7c7a7a] text-sm'>
+                    <p>Orders:</p>
+                    <p>$120.00</p>
+                </div>
+                <div className='flex justify-between px-1  text-[#7c7a7a] text-sm'>
+                    <p>Items:</p>
+                    <p>100+</p>
+                </div>
+                <div className='flex justify-between px-1  text-[#7c7a7a] text-sm'>
+                    <p className='items-center'>Rating:</p>
+                    <p className='items-center flex'>
+                        <FaStar size={12} color='yellow' />
+                        <FaStar size={12} color='yellow' />
+                        <FaStar size={12} color='yellow' />
+                        <FaStar size={12} color='yellow' />
+                        <FaStar size={12} color='gray' />
+                    </p>
+                </div>
+            </CardContent>
+            <div className='pt-10 flex gap-2 justify-center items-center p-2'>
+                <Button onClick={() => nextPath(1)} className='  rounded-t-sm rounded-md rounded-r-lg bg-[#66b641] hover:bg-[#6bc541] w-full gap-1'><FaEye size={18} color='gray' /> Preview</Button>
+                <Button className=' text-white flex items-center justify-center bg-[#d3cfcf] hover:bg-[#bdb8b8]'><FaBookmark color='gray' /></Button>
+            </div>
+        </Card>
+    )
+}
