@@ -13,12 +13,14 @@ import SidebarTriggerButton from './components/Sidebar/SidebarTriggerButton';
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
 import ProductCart from './components/Product/Cart';
+import { Toaster } from './components/ui/toaster';
 
 function App() {
   
   return (
     <>
       <Navbar />
+      <Toaster />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProductList />} />
