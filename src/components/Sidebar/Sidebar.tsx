@@ -29,7 +29,7 @@ export function Sidebar() {
                 <SidebarTriggerButton />
                 <SheetContent side={'left'}>
                     <SheetHeader className='-mt-3 border-b border-opacity-[0.3]'>
-                        <SheetTitle className='text-2xl pl-4'>Menu</SheetTitle>
+                        <SheetTitle className='text-2xl pl-4'>ProdZM</SheetTitle>
                     </SheetHeader>
                     <div className="grid gap-4 py-4">
                         <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
