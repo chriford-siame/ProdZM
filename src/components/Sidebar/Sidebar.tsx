@@ -29,7 +29,11 @@ export function Sidebar() {
                 <SidebarTriggerButton />
                 <SheetContent side={'left'}>
                     <SheetHeader className='-mt-3 border-b border-opacity-[0.3]'>
-                        <SheetTitle className='text-2xl pl-4'>Menu</SheetTitle>
+                        <SheetTitle className='text-2xl pl-4 text-cyan-400'>
+                            <a href="/">
+                                ProdZM
+                            </a>
+                        </SheetTitle>
                     </SheetHeader>
                     <div className="grid gap-4 py-4">
                         <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
@@ -75,7 +79,7 @@ export function Sidebar() {
                     </div>
                     <SheetFooter>
                         <SheetClose className='flex w-full justify-center' asChild>
-                            <Button type="submit" className=' text-red-600'>Logout</Button>
+                            <Button type="submit" className=' hover:text-white hover:font-bold'>Logout</Button>
                         </SheetClose>
                     </SheetFooter>
                 </SheetContent>
