@@ -19,6 +19,7 @@ import ProductOrders from './components/Product/Order/Orders';
 import PageNotFound from './components/Pages/404';
 import Settings from './components/Settings/Settings';
 import ProductHistory from './components/Product/History';
+import Support from './components/CustomerCare/Support';
 
 function App() {
   
@@ -41,6 +42,7 @@ function App() {
           <Route path="/product/delete" element={<ProductDelete />} />
           <Route path="/product/create" element={<ProductCreate />} />
           <Route path="/product/status" element={<ProductStatus />} />
+          <Route path="/support" element={<Support />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
