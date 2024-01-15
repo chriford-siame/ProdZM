@@ -35,7 +35,7 @@ export default function ProductCard() {
             <CardHeader className=' items-center pt-1'>
                 <div className='border-t mx-10 w-full'></div>
                 <CardTitle className=' text-[#7c7a7a]'>
-                    <a href='/product/detail'>Tshirt</a>
+                    <a href='/product/13/detail'>Tshirt</a>
                 </CardTitle>
                 <div className='border-t mx-10 w-full'></div>
             </CardHeader>

@@ -37,36 +37,36 @@ export function Sidebar() {
                     </SheetHeader>
                     <div className="grid gap-4 py-4">
                         <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
-                            <a href='/signup' className="flex justify-start gap-2">
+                            <a href='/dashboard' className="flex justify-start gap-2">
                                 <MdDashboard size={20} className='text-gray-700' /> <span className='-mt-[2px]'>Dashboard</span>
                             </a>
                         </a>
-                        <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
+                        <a href='/' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
                             <div className="flex justify-start gap-2">
                                 <MdViewList size={20} className='text-gray-700' /> <span className='-mt-[2px]'>Products</span>
                             </div>
                         </a>
-                        <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
+                        <a href='/product/cart' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
                             <div className="flex justify-start gap-2">
                                 <MdShoppingCart size={20} className='text-gray-700' /> <span className='-mt-[2px]'>My Cart</span>
                             </div>
                         </a>
-                        <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
+                        <a href='/product/history' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
                             <div className="flex justify-start gap-2">
                                 <MdHistory size={20} className='text-gray-700' /> <span className='-mt-[2px]'>History</span>
                             </div>
                         </a>
-                        <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
+                        <a href='/product/orders' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
                             <div className="flex justify-start gap-2">
                                 <MdBookmark size={20} className='text-gray-700' /> <span className='-mt-[2px]'>My Orders</span>
                             </div>
                         </a>
-                        <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
+                        <a href='/account/profile' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
                             <div className="flex justify-start gap-2">
                                 <MdAccountCircle size={20} className='text-gray-700' /> <span className='-mt-[2px]'>Account</span>
                             </div>
                         </a>
-                        <a href='#' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
+                        <a href='/account/settings' className="flex rounded-sm pl-3 justify-start py-2 items-center gap-4 hover:text-blue-600 hover:font-bold hover:bg-blue-200">
                             <div className="flex justify-start gap-2">
                                 <MdSettings size={20} className='text-gray-700' /> <span className='-mt-[2px]'>Settings</span>
                             </div>
