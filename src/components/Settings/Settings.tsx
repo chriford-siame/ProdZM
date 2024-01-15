@@ -2,6 +2,12 @@ import React from 'react'
 
 export default function Settings() {
   return (
-    <div>Settings</div>
+    <div>
+      Sections
+      - Shipping details section
+      - Personal Details section
+      
+    </div>
+
   )
 }
