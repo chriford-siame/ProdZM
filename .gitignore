@@ -10,7 +10,7 @@
 
 # production
 /build
-
+issues.txt
 # misc
 .DS_Store
 .env.local
