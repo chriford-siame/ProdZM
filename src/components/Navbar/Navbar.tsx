@@ -5,6 +5,7 @@ import { Sidebar } from '../Sidebar/Sidebar'
 import { NavigationMenuDemo } from './Content'
 import { Input } from '../ui/input'
 import { FaCartArrowDown, FaBell, FaSearch } from 'react-icons/fa'
+import ProfileDropDownMenu from './DropDownMenu'
 
 export default function Navbar() {
     return (
@@ -35,7 +36,7 @@ export default function Navbar() {
                             <div className='flex items-center justify-center self-start -ml-3 p-1 text-[8pt] rounded-full bg-red-500 text-white'></div>
                         </a>
                     </div>
-                    <img className='rounded-full w-10 h-10' src={require('src/assets/images/logo.jpg')} alt="" />
+                    <ProfileDropDownMenu />
                 </div>
             </div>
         </React.Fragment>

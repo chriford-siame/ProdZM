@@ -11,15 +11,16 @@ import { Button } from '../ui/button'
 import { FaCartPlus, FaEye, FaStar } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom";
 import { useToast } from '../ui/use-toast';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 
 
-interface Product {
+interface IProduct {
     name: string;
     description: string;
 
 }
 interface IProps {
-    product: string;
+    product: IProduct;
 }
 export default function ProductCard() {
     const { toast } = useToast()
@@ -34,8 +35,17 @@ export default function ProductCard() {
             <img className='w-full h-56' src={require('src/assets/images/product/tshirt-1.png')} alt="" />
             <CardHeader className=' items-center pt-1'>
                 <div className='border-t mx-10 w-full'></div>
-                <CardTitle className=' text-[#7c7a7a]'>
-                    <a href='/product/detail'>Tshirt</a>
+                <CardTitle className=' font-semibold text-[#7c7a7a]'>
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger>
+                                <a href='/product/13/detail' className=' text-[14pt]'>Truncate2 25 chars...</a>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <a href='/product/13/detail' className='text-[#7c7a7a]'>Full title here</a>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
                 </CardTitle>
                 <div className='border-t mx-10 w-full'></div>
             </CardHeader>
@@ -73,7 +83,7 @@ export default function ProductCard() {
                     title: "Save For Later",
                     description: "Item saved to cart successfully",
                     duration: 3500,
-                    
+
                 })}
                     className=' text-white flex items-center justify-center bg-[#d3cfcf] hover:bg-[#bdb8b8]'><FaCartPlus size={18} color='gray' /></Button>
             </div>
