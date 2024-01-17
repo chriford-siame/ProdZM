@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Sidebar } from '../Sidebar/Sidebar'
-import { NavigationMenuDemo } from './Content'
+import { CategoryNavMenu, NavigationMenuDemo } from './Content'
 import { Input } from '../ui/input'
 import { FaCartArrowDown, FaBell, FaSearch } from 'react-icons/fa'
 import ProfileDropDownMenu from './DropDownMenu'
@@ -18,7 +18,10 @@ export default function Navbar() {
                 <div className='hidden md:block lg:block xl:block pt-1'>
                     {NavigationMenuDemo()}
                 </div>
-                <div className='flex gap-10 -pl-20'>
+                <div className='block md:hidden lg:hidden xl:hidden pt-1'>
+                    {CategoryNavMenu()}
+                </div>
+                <div className='flex gap-6 '>
                     <div className='flex gap-1 items-center'>
                         <div className='flex'>
                             <a className='flex' href="/product/cart">
