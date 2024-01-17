@@ -14,7 +14,7 @@ export default function Navbar() {
                 <div className='flex items-center '>
                     <Sidebar />
                 </div>
-                <div className='sm:visible lg:visible md:visible pt-1'>
+                <div className='hidden md:block lg:block xl:block pt-1'>
                     {NavigationMenuDemo()}
                 </div>
                 <div className='flex gap-10 -pl-20'>
