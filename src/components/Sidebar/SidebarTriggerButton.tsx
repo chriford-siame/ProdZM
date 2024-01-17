@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from '../ui/button'
 import { SheetTrigger } from '../ui/sheet'
 import { FaBars } from 'react-icons/fa'
 

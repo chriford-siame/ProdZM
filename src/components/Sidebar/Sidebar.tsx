@@ -1,17 +1,6 @@
 import React from 'react'
 
 import {
-    MdDashboard,
-    MdViewList,
-    MdShoppingCart,
-    MdHistory,
-    MdBookmark,
-    MdAccountCircle,
-    MdSettings,
-    MdMail,
-} from 'react-icons/md'
-import { Label } from "../ui/label"
-import {
     Sheet,
     SheetClose,
     SheetContent,
@@ -21,7 +10,19 @@ import {
 } from "../ui/sheet"
 import SidebarTriggerButton from './SidebarTriggerButton'
 import { Button } from '../ui/button'
-import { BookMarked, ClipboardList, FileQuestion, History, ListIcon, LogOut, LucideLayoutDashboard, Mail, Settings, Settings2Icon, ShoppingBag, ShoppingCart, User } from 'lucide-react'
+import { 
+    BookMarked,
+    ClipboardList,
+    FileQuestion,
+    History,
+    ListIcon,
+    LogOut,
+    LucideLayoutDashboard,
+    Mail,
+    Settings,
+    ShoppingCart,
+    User 
+} from 'lucide-react'
 
 export function Sidebar() {
     return (

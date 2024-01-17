@@ -9,6 +9,8 @@ import {
     navigationMenuTriggerStyle,
 } from "../ui/navigation-menu"
 import { cn } from "../../lib/utils";
+import { ChevronDownIcon } from "lucide-react";
+
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -69,6 +71,35 @@ const ListItem = React.forwardRef<
     )
 })
 ListItem.displayName = "ListItem"
+
+
+export function CategoryNavMenu() {
+    return (
+
+        <NavigationMenu className="-ml-4">
+            <NavigationMenuList>
+                <NavigationMenuItem>
+                    <NavigationMenuTrigger className=' bg-inherit text-white hover:bg-inherit hover:text-[#616161] text-[12pt]'>Category</NavigationMenuTrigger>
+                    <NavigationMenuContent className="">
+                        <ul className="grid w-[250px]  gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                            {components.map((component) => (
+                                <ListItem
+                                    key={component.title}
+                                    title={component.title}
+                                    href={component.href}
+                                >
+                                    <div className="text-[8pt]">
+                                        {component.description}
+                                    </div>
+                                </ListItem>
+                            ))}
+                        </ul>
+                    </NavigationMenuContent>
+                </NavigationMenuItem>
+            </NavigationMenuList>
+        </NavigationMenu>
+    )
+}
 
 export function NavigationMenuDemo() {
     return (

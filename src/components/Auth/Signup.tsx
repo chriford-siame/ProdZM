@@ -1,17 +1,14 @@
 import React from 'react'
-import { GoogleLogin } from '@react-oauth/google'
 import { Button } from "../ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card"
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
-import { jwtDecode } from 'jwt-decode'
 
 export default function Signup() {
   return (

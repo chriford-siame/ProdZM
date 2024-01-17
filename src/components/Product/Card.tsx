@@ -2,8 +2,6 @@ import React from 'react'
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "../ui/card"
@@ -12,7 +10,6 @@ import { FaCartPlus, FaEye, FaStar } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom";
 import { useToast } from '../ui/use-toast';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
-
 
 interface IProduct {
     name: string;
