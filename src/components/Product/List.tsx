@@ -17,12 +17,11 @@ export default function ProductList() {
             <div className='flex'>
               <div className="px-2 items-top flex items-center space-x-2">
                 <div className="grid gap-1.5 leading-none">
-                  <label
-                    htmlFor="terms1"
+                  <div
                     className="flex gap-2 text-md items-center text-muted-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   >
                     <Settings2 size={25} />  Filter By:
-                  </label>
+                  </div>
                 </div>
               </div>
 
