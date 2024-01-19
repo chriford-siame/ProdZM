@@ -15,7 +15,7 @@ root.render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId="793744695975-7mcj1857jd9ieomtvauim07vrvvbpt9j.apps.googleusercontent.com">
       <App />
-    </GoogleOAuthProvider>;
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );
 reportWebVitals();
