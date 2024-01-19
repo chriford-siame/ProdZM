@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Toaster } from './components/ui/toaster';
+import CustomLoarder from './components/Icons/Loarder';
 
 const ProductList = React.lazy(() => import('./components/Product/List'));
 const ProductEdit = React.lazy(() => import('./components/Product/Edit'));
@@ -21,7 +22,6 @@ const Support = React.lazy(() => import('./components/CustomerCare/Support'));
 const ProductDetail = React.lazy(() => import('./components/Product/Detail'));
 
 function App() {
-
   return (
     <>
       <Navbar />
@@ -29,77 +29,107 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <ProductList />
             </React.Suspense>
           } />
           <Route path="/product/:id/detail" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <ProductDetail />
             </React.Suspense>
           } />
           <Route path="/login" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <Login />
             </React.Suspense>
           } />
           <Route path="/signup" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <Signup />
             </React.Suspense>
           } />
           <Route path="/product/history" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <ProductHistory />
             </React.Suspense>
           } />
           <Route path="/product/orders" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <ProductOrders />
             </React.Suspense>
           } />
           <Route path="/account/settings" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <Settings />
             </React.Suspense>
           } />
           <Route path="/dashboard" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <Dashboard />
             </React.Suspense>
           } />
           <Route path="/product/edit" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <ProductEdit />
             </React.Suspense>
           } />
           <Route path="/product/cart" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <ProductCart />
             </React.Suspense>
           } />
           <Route path="/product/delete" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <ProductDelete />
             </React.Suspense>
           } />
           <Route path="/product/create" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <ProductCreate />
             </React.Suspense>
           } />
           <Route path="/product/status" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <ProductStatus />
             </React.Suspense>
           } />
           <Route path="/support" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <Support />
             </React.Suspense>
           } />
           <Route path="*" element={
-            <React.Suspense fallback='loading...'>
+            <React.Suspense fallback={
+              <CustomLoarder />
+            }>
               <PageNotFound />
             </React.Suspense>
           } />
