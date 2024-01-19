@@ -1,46 +1,108 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ProductList from './components/Product/List';
-import ProductDetail from './components/Product/Detail';
-import ProductEdit from './components/Product/Edit';
-import ProductCreate from './components/Product/Create';
-import ProductStatus from './components/Product/ProductStatus';
-import ProductDelete from './components/Product/ProductDelete';
-import Navbar from './components/Navbar/Navbar';
-import Signup from './components/Auth/Signup';
-import Login from './components/Auth/Login';
-import ProductCart from './components/Product/Cart';
 import { Toaster } from './components/ui/toaster';
-import Dashboard from './components/Dashboard/Dashboard';
-import ProductOrders from './components/Product/Order/Orders';
-import PageNotFound from './components/Pages/404';
-import Settings from './components/Settings/Settings';
-import ProductHistory from './components/Product/History';
-import Support from './components/CustomerCare/Support';
+
+const ProductList = React.lazy(() => import('./components/Product/List'));
+const ProductEdit = React.lazy(() => import('./components/Product/Edit'));
+const ProductCreate = React.lazy(() => import('./components/Product/Create'));
+const ProductStatus = React.lazy(() => import('./components/Product/ProductStatus'));
+const ProductDelete = React.lazy(() => import('./components/Product/ProductDelete'));
+const Navbar = React.lazy(() => import('./components/Navbar/Navbar'));
+const Signup = React.lazy(() => import('./components/Auth/Signup'));
+const Login = React.lazy(() => import('./components/Auth/Login'));
+const ProductCart = React.lazy(() => import('./components/Product/Cart'));
+const Dashboard = React.lazy(() => import('./components/Dashboard/Dashboard'));
+const ProductOrders = React.lazy(() => import('./components/Product/Order/Orders'));
+const PageNotFound = React.lazy(() => import('./components/Pages/404'));
+const Settings = React.lazy(() => import('./components/Settings/Settings'));
+const ProductHistory = React.lazy(() => import('./components/Product/History'));
+const Support = React.lazy(() => import('./components/CustomerCare/Support'));
+
+const ProductDetail = React.lazy(() => import('./components/Product/Detail'));
 
 function App() {
-  
+
   return (
     <>
       <Navbar />
       <Toaster />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ProductList />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/product/history" element={<ProductHistory />} />
-          <Route path="/product/orders" element={<ProductOrders />} />
-          <Route path="/account/settings" element={<Settings />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/product/:id/detail" element={<ProductDetail />} />
-          <Route path="/product/edit" element={<ProductEdit />} />
-          <Route path="/product/cart" element={<ProductCart />} />
-          <Route path="/product/delete" element={<ProductDelete />} />
-          <Route path="/product/create" element={<ProductCreate />} />
-          <Route path="/product/status" element={<ProductStatus />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="/" element={
+            <React.Suspense fallback='loading...'>
+              <ProductList />
+            </React.Suspense>
+          } />
+          <Route path="/product/:id/detail" element={
+            <React.Suspense fallback='loading...'>
+              <ProductDetail />
+            </React.Suspense>
+          } />
+          <Route path="/login" element={
+            <React.Suspense fallback='loading...'>
+              <Login />
+            </React.Suspense>
+          } />
+          <Route path="/signup" element={
+            <React.Suspense fallback='loading...'>
+              <Signup />
+            </React.Suspense>
+          } />
+          <Route path="/product/history" element={
+            <React.Suspense fallback='loading...'>
+              <ProductHistory />
+            </React.Suspense>
+          } />
+          <Route path="/product/orders" element={
+            <React.Suspense fallback='loading...'>
+              <ProductOrders />
+            </React.Suspense>
+          } />
+          <Route path="/account/settings" element={
+            <React.Suspense fallback='loading...'>
+              <Settings />
+            </React.Suspense>
+          } />
+          <Route path="/dashboard" element={
+            <React.Suspense fallback='loading...'>
+              <Dashboard />
+            </React.Suspense>
+          } />
+          <Route path="/product/edit" element={
+            <React.Suspense fallback='loading...'>
+              <ProductEdit />
+            </React.Suspense>
+          } />
+          <Route path="/product/cart" element={
+            <React.Suspense fallback='loading...'>
+              <ProductCart />
+            </React.Suspense>
+          } />
+          <Route path="/product/delete" element={
+            <React.Suspense fallback='loading...'>
+              <ProductDelete />
+            </React.Suspense>
+          } />
+          <Route path="/product/create" element={
+            <React.Suspense fallback='loading...'>
+              <ProductCreate />
+            </React.Suspense>
+          } />
+          <Route path="/product/status" element={
+            <React.Suspense fallback='loading...'>
+              <ProductStatus />
+            </React.Suspense>
+          } />
+          <Route path="/support" element={
+            <React.Suspense fallback='loading...'>
+              <Support />
+            </React.Suspense>
+          } />
+          <Route path="*" element={
+            <React.Suspense fallback='loading...'>
+              <PageNotFound />
+            </React.Suspense>
+          } />
         </Routes>
       </BrowserRouter>
     </>
