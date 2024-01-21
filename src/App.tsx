@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Toaster } from './components/ui/toaster';
-import CustomLoarder from './components/Icons/Loarder';
+import CustomLoarder from './components/Loaders/Loarder';
 
 const ProductList = React.lazy(() => import('./components/Product/List'));
 const ProductEdit = React.lazy(() => import('./components/Product/Edit'));
