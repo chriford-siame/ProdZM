@@ -23,7 +23,7 @@ export default function ProductCard() {
     const { toast } = useToast()
     const navigate = useNavigate();
     const nextPath = (id: string | number) => {
-        let nextPath = `/product/detail/${id}`;
+        let nextPath = `/product/${id}/detail/`;
         navigate(nextPath);
     }
 
