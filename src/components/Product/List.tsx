@@ -63,7 +63,7 @@ export default function ProductList() {
               </div>
             </div>
             <div className='flex pr-5 border-t md:border-none lg:border-none xl:border-none mt-2 pt-2 lg:mt-auto xl:mt-auto md:mt-auto'>
-              <input type='text' className=' sticky bg-[#ebe6e6] text-[10pt] active:border-gray-400 pr-10 rounded-md ml px-2 mr-4 py-0 mx-0' placeholder='Search products' />
+              <input type='text' className=' invalid:border-pink-500 disabled:border-slate-200 border active:border-slate-300 sticky bg-[#ebe6e6] text-[10pt] focus:invalid:border-pink-500    pr-10 rounded-md ml px-2 mr-4 py-0 mx-0' placeholder='Search products' />
               <button type='submit' className='text-white hover:bg-[#7bcbd1] bg-[#b0caca] z-10 -ml-[50px] p-2 py-1 rounded-md rounded-l-none border-none'>
                 <Search className='cursor-pointer' size={20} color='white' />
               </button>
@@ -79,7 +79,7 @@ export default function ProductList() {
           </div>
         </div>
       </div>
-      <div className='container px-10 my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xlg:grid-cols-5  gap-4'>
+      <div className='container px-10 my-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xlg:grid-cols-5  gap-4'>
         <ProductCard />
         <ProductCard />
         <ProductCard />
