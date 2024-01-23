@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { Card } from '../ui/card';
-import { Button } from '../ui/button';
-import { Edit2Icon } from 'lucide-react';
+import { Card } from '../../ui/card';
+import { Button } from '../../ui/button';
+import ShippingDetailFormModal from './ShippingDetailForm';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -44,7 +44,7 @@ export default function ProductDetail() {
                   </button>
                 </div>
                 <div className='pb-4'>
-                <Button className=' w-full mt-3 hover:font-bold flex gap-2'> Checkout</Button>
+                  <Button className=' w-full mt-3 hover:font-bold flex gap-2'> Checkout</Button>
                 </div>
               </div>
               <div className='border px-5 rounded-md '>
@@ -87,7 +87,7 @@ export default function ProductDetail() {
                 </div>
                 <div>
                   <p className='text-center border-b text-muted-foreground text-[11pt] py-2 flex justify-center cursor-pointer'>
-                    <Edit2Icon size={20} className=' text-muted-foreground' /> <span className=' text-blue-400'>Edit or add new shipping details</span> 
+                    <ShippingDetailFormModal />
                   </p>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>

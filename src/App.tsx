@@ -19,7 +19,7 @@ const Settings = React.lazy(() => import('./components/Settings/Settings'));
 const ProductHistory = React.lazy(() => import('./components/Product/History'));
 const Support = React.lazy(() => import('./components/CustomerCare/Support'));
 
-const ProductDetail = React.lazy(() => import('./components/Product/Detail'));
+const ProductDetail = React.lazy(() => import('./components/Product/Detail/Detail'));
 
 function App() {
   return (
