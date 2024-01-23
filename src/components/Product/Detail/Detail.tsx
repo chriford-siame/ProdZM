@@ -2,18 +2,11 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Card } from '../../ui/card';
 import { Button } from '../../ui/button';
-import { Edit2Icon } from 'lucide-react';
 import ShippingDetailFormModal from './ShippingDetailForm';
 
 export default function ProductDetail() {
   const { id } = useParams();
 
-  const button = () => {
-    return (
-      <>
-      </>
-    )
-  }
   return (
     <React.Fragment>
       <div>
