@@ -11,7 +11,7 @@ const ProductDelete = React.lazy(() => import('./components/Product/ProductDelet
 const Navbar = React.lazy(() => import('./components/Navbar/Navbar'));
 const Signup = React.lazy(() => import('./components/Auth/Signup'));
 const Login = React.lazy(() => import('./components/Auth/Login'));
-const ProductCart = React.lazy(() => import('./components/Product/Cart'));
+const ProductCart = React.lazy(() => import('./components/Product/Cart/Cart'));
 const Dashboard = React.lazy(() => import('./components/Dashboard/Dashboard'));
 const ProductOrders = React.lazy(() => import('./components/Product/Order/Orders'));
 const PageNotFound = React.lazy(() => import('./components/Pages/404'));
