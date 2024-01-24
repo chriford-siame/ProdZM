@@ -44,8 +44,9 @@ export default function ProductDetail() {
                     <div className="h-6 w-6 rounded-md bg-[url('src/assets/images/product/tshirt-4.png')] bg-cover bg-no-repeat"></div>
                   </button>
                 </div>
-                <div className='pb-1'>
-                  <Button className=' w-full mt-3 hover:font-bold flex gap-2'> Checkout</Button>
+                <div className='pb-1 flex gap-1 justify-between'>
+                  <Button className=' w-full mt-3 hover:font-bold flex gap-2'> Buy Now</Button>
+                  <Button className=' w-full mt-3 hover:font-bold flex gap-2'> Add to cart</Button>
                 </div>
               </div>
               <div className='border px-5 rounded-md '>
