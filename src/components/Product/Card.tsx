@@ -74,8 +74,8 @@ export default function ProductCard() {
                     </p>
                 </div>
             </CardContent>
-            <div className='pt-5 flex gap-2 justify-center items-center p-2'>
-                <Button onClick={() => nextPath(1)} className='  rounded-t-sm rounded-md rounded-r-lg bg-[#66b641] hover:bg-[#6bc541] w-full gap-1'><FaEye size={18} color='gray' /> Preview</Button>
+            <div className='pt-2 flex gap-2 justify-center items-center p-2'>
+                <Button onClick={() => nextPath(1)} size={'icon'} style={{padding: 0}} className='rounded-t-sm rounded-md rounded-r-lg bg-[#66b641] hover:bg-[#6bc541] w-full gap-1'><FaEye size={18} color='lightgray' /> </Button>
                 <Button onClick={() => toast({
                     title: "Save For Later",
                     description: "Item saved to cart successfully",
