@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Card } from '../../ui/card';
 import { Button } from '../../ui/button';
 import ShippingDetailFormModal from './ShippingDetailForm';
+import { Contact2, DollarSign, GlobeIcon, ListChecksIcon, ListMinus, ListTodo, LocateFixedIcon, LocateIcon, Map, MapPinIcon, Phone, PhoneIcon, Star, User, UserIcon } from 'lucide-react';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -59,24 +60,24 @@ export default function ProductDetail() {
                   </p>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Category</div>
+                  <div className='flex gap-1'><ListTodo /> Category</div>
                   <div>Electronics</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Price</div>
-                  <div>@$10.00</div>
+                  <div className='flex gap-1'><DollarSign /> Price</div>
+                  <div>$10.00</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Orders</div>
-                  <div>3000+</div>
+                  <div className='flex gap-1'><ListChecksIcon /> Orders</div>
+                  <div>812</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Rating</div>
-                  <div>4443</div>
+                  <div className='flex gap-1'><Star /> Rating</div>
+                  <div>54</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Remaining</div>
-                  <div>$20.00</div>
+                  <div className='flex gap-1'><ListMinus /> Remaining</div>
+                  <div>54</div>
                 </div>
 
               </div>
@@ -91,24 +92,24 @@ export default function ProductDetail() {
                   </p>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Category</div>
-                  <div>Electronics</div>
+                  <div className='flex gap-1'><MapPinIcon /> Shipping address</div>
+                  <div>Plot no. 1672, Lagos</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Price</div>
-                  <div>@$10.00</div>
+                  <div className='flex gap-1'><UserIcon /> Contact name</div>
+                  <div>John Doe</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Orders</div>
-                  <div>3000+</div>
+                  <div className='flex gap-1'><PhoneIcon /> Phone No.</div>
+                  <div>+260770000000</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Rating</div>
-                  <div>4443</div>
+                  <div className='flex gap-1'><GlobeIcon /> State/Province</div>
+                  <div>North America</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Remaining</div>
-                  <div>$20.00</div>
+                  <div className='flex gap-1'><LocateIcon /> City</div>
+                  <div>Lagos</div>
                 </div>
 
               </div>
