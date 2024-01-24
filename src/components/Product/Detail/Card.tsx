@@ -29,7 +29,7 @@ export default function DetailCard() {
 
     return (
         <Card className='hover:-mt-1 shadow-xl hover:shadow-2xl'>
-            <img className='w-full h-32' src={require('src/assets/images/product/tshirt-1.png')} alt="" />
+            <img className='w-full md:h-48 xl:h-48 lg:h-52 h-42' src={require('src/assets/images/product/tshirt-1.png')} alt="" />
             <CardHeader className=' items-center pt-1 px-1.5'>
                 <div className='mt-5 w-full border-b'></div>
                 <CardTitle className=' font-semibold text-[#7c7a7a]'>
