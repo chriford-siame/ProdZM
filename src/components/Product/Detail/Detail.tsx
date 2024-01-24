@@ -3,28 +3,29 @@ import { useParams } from 'react-router-dom'
 import { Card } from '../../ui/card';
 import { Button } from '../../ui/button';
 import ShippingDetailFormModal from './ShippingDetailForm';
+import { Contact2, DollarSign, GlobeIcon, ListChecksIcon, ListMinus, ListTodo, LocateFixedIcon, LocateIcon, Map, MapPinIcon, Phone, PhoneIcon, Star, User, UserIcon } from 'lucide-react';
+import ProductCard from '../Card';
+import DetailCard from './Card';
 
 export default function ProductDetail() {
   const { id } = useParams();
 
   return (
     <React.Fragment>
-      <div>
-        <div className='flex mx-6 justify-between py-1 border-b'>
+      <div className='mb-4'>
+        <div className='flex mx-6 mb-4 justify-between py-1 border-b'>
           <div className='flex pr-2'>
             <a href="/" className=' flex text-[#3da3aa] rounded-lg px-2 bg-slate-200 hover:bg-slate-300'>back</a>
           </div>
           <div className='flex px-2'>
-            <p className=' text-muted-foreground'>
+            <p className=' text-muted-foreground sm:text-center'>
               Product Details
             </p>
           </div>
         </div>
-        {/* <div className="p-2 px-12 grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 gap-4"> */}
-        <Card style={{ border: 'None' }} className='shadow-2xl p-5 mx-3'>
+        <Card style={{ border: 'None' }} className='shadow-2xl p-5 mx-3 rounded-t-none'>
           <div className='flex'>
-
-            <div className='pr-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2'>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2'>
               <div className='pr-4'>
                 <div className="rounded-md">
                   <img src={require("src/assets/images/product/tshirt-4.png")} alt="" />
@@ -43,12 +44,13 @@ export default function ProductDetail() {
                     <div className="h-6 w-6 rounded-md bg-[url('src/assets/images/product/tshirt-4.png')] bg-cover bg-no-repeat"></div>
                   </button>
                 </div>
-                <div className='pb-4'>
-                  <Button className=' w-full mt-3 hover:font-bold flex gap-2'> Checkout</Button>
+                <div className='pb-1 flex gap-1 justify-between'>
+                  <Button className=' w-full mt-3 hover:font-bold flex gap-2'> Buy Now</Button>
+                  <Button className=' w-full mt-3 hover:font-bold flex gap-2'> Add to cart</Button>
                 </div>
               </div>
               <div className='border px-5 rounded-md '>
-                <div className='text-start border-b py-2 font-semibold text-[16pt] text-muted-foreground'>
+                <div className='text-center border-b py-2 font-semibold text-[16pt] text-muted-foreground'>
                   <p>Tshirt Title</p>
                 </div>
                 <div>
@@ -59,24 +61,24 @@ export default function ProductDetail() {
                   </p>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Category</div>
+                  <div className='flex gap-1'><ListTodo /> Category</div>
                   <div>Electronics</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Price</div>
-                  <div>@$10.00</div>
+                  <div className='flex gap-1'><DollarSign /> Price</div>
+                  <div>$10.00</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Orders</div>
-                  <div>3000+</div>
+                  <div className='flex gap-1'><ListChecksIcon /> Orders</div>
+                  <div>812</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Rating</div>
-                  <div>4443</div>
+                  <div className='flex gap-1'><Star /> Rating</div>
+                  <div>54</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Remaining</div>
-                  <div>$20.00</div>
+                  <div className='flex gap-1'><ListMinus /> Remaining</div>
+                  <div>54</div>
                 </div>
 
               </div>
@@ -91,45 +93,49 @@ export default function ProductDetail() {
                   </p>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Category</div>
-                  <div>Electronics</div>
+                  <div className='flex gap-1'><MapPinIcon /> Shipping address</div>
+                  <div>Plot no. 1672, Lagos</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Price</div>
-                  <div>@$10.00</div>
+                  <div className='flex gap-1'><UserIcon /> Contact name</div>
+                  <div>John Doe</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Orders</div>
-                  <div>3000+</div>
+                  <div className='flex gap-1'><PhoneIcon /> Phone No.</div>
+                  <div>+260770000000</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Rating</div>
-                  <div>4443</div>
+                  <div className='flex gap-1'><GlobeIcon /> State/Province</div>
+                  <div>North America</div>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
-                  <div>Remaining</div>
-                  <div>$20.00</div>
+                  <div className='flex gap-1'><LocateIcon /> City</div>
+                  <div>Lagos</div>
                 </div>
 
               </div>
             </div>
-
-            {/* <div className='ml-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-2'>
-            </div> */}
-
           </div>
-          {/* <div className='bg-black'>Shipping Details</div> */}
         </Card>
-        {/* <Card>
-            <CardContent>
-              <div className='flex items-center justify-center pt-5'>
-                Shipping Details Card.
-              </div>
-            </CardContent>
-          </Card> */}
 
       </div>
-      {/* </div> */}
+      <Card className='px-5 border-b mx-3 shadow-2xl mb-3 py-2 rounded-l-none border-t-0'>
+        <p className=' text-muted-foreground font-bold sm:text-center text-xl border-b'>
+          Related Items
+        </p>
+        <div className='container px-1 md:px-4  lg:px-4 xl:px-4 my-5 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xlg:grid-cols-5  gap-4'>
+        <DetailCard />
+        <DetailCard />
+        <DetailCard />
+        <DetailCard />
+        <DetailCard />
+        <DetailCard />
+        <DetailCard />
+        <DetailCard />
+        <DetailCard />
+        <DetailCard />
+      </div>
+      </Card>
     </React.Fragment>
   )
 };

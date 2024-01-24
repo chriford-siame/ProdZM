@@ -4,12 +4,12 @@ import {
     CardContent,
     CardHeader,
     CardTitle,
-} from "../ui/card"
-import { Button } from '../ui/button'
+} from "../../ui/card"
+import { Button } from '../../ui/button'
 import { FaCartPlus, FaEye, FaStar } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom";
-import { useToast } from '../ui/use-toast';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
+import { useToast } from '../../ui/use-toast';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../../ui/tooltip';
 
 interface IProduct {
     name: string;
@@ -19,7 +19,7 @@ interface IProduct {
 interface IProps {
     product: IProduct;
 }
-export default function ProductCard() {
+export default function DetailCard() {
     const { toast } = useToast()
     const navigate = useNavigate();
     const nextPath = (id: string | number) => {
@@ -47,23 +47,23 @@ export default function ProductCard() {
                 <div className='border-t mx-10 w-full'></div>
             </CardHeader>
             <CardContent className='w-full pb-0 px-2 -mt-3'>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
+                <div className='flex justify-between  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p>Price:</p>
                     <p>$120.00</p>
                 </div>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
+                <div className='flex justify-between text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p>Orders:</p>
                     <p>1200+</p>
                 </div>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
+                <div className='flex justify-between text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p>Remaining:</p>
                     <p>100+</p>
                 </div>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
+                <div className='flex justify-between text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p>Shipping:</p>
                     <p>60 days</p>
                 </div>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
+                <div className='flex justify-between text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p className='items-center'>Rating:</p>
                     <p className='items-center flex'>
                         <FaStar color='yellow' />
