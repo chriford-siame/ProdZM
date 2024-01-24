@@ -114,23 +114,10 @@ export default function ProductDetail() {
 
               </div>
             </div>
-
-            {/* <div className='ml-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-2'>
-            </div> */}
-
           </div>
-          {/* <div className='bg-black'>Shipping Details</div> */}
         </Card>
-        {/* <Card>
-            <CardContent>
-              <div className='flex items-center justify-center pt-5'>
-                Shipping Details Card.
-              </div>
-            </CardContent>
-          </Card> */}
 
       </div>
-      {/* </div> */}
     </React.Fragment>
   )
 };
