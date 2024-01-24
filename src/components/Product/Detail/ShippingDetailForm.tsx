@@ -28,7 +28,7 @@ function ShippingDetailFormModal() {
         <Edit2Icon size={20} className=' text-muted-foreground' /> <span className=' text-blue-400'>Edit or add new shipping details</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-4xl">
+      <DialogContent className="w-full">
         <DialogHeader>
           <DialogTitle>Shipping Details</DialogTitle>
           <DialogDescription className="flex justify-between">
