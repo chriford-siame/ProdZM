@@ -29,14 +29,14 @@ export default function ProductCard() {
 
     return (
         <Card className='hover:-mt-1 shadow-xl hover:shadow-2xl'>
-            <img className='w-full h-56' src={require('src/assets/images/product/tshirt-1.png')} alt="" />
-            <CardHeader className=' items-center pt-1'>
-                <div className='border-t mx-10 w-full'></div>
+            <img className='w-full md:h-48 xl:h-48 lg:h-52 h-32' src={require('src/assets/images/product/tshirt-1.png')} alt="" />
+            <CardHeader className=' items-center pt-1 px-1.5'>
+                <div className='mt-5 w-full border-b'></div>
                 <CardTitle className=' font-semibold text-[#7c7a7a]'>
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger>
-                                <a href='/product/13/detail' className=' text-[14pt]'>Truncate2 25 chars...</a>
+                                <a href='/product/13/detail' className=' text-[8pt] md:text-[12pt] xl:text-[12pt] lg:text-[12pt] '>Truncate2 25 chars...</a>
                             </TooltipTrigger>
                             <TooltipContent>
                                 <a href='/product/13/detail' className='text-[#7c7a7a]'>Full title here</a>
@@ -46,35 +46,35 @@ export default function ProductCard() {
                 </CardTitle>
                 <div className='border-t mx-10 w-full'></div>
             </CardHeader>
-            <CardContent className='w-full pb-0'>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-sm'>
+            <CardContent className='w-full pb-0 px-2 -mt-3'>
+                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p>Price:</p>
                     <p>$120.00</p>
                 </div>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-sm'>
+                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p>Orders:</p>
                     <p>1200+</p>
                 </div>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-sm'>
+                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p>Remaining:</p>
                     <p>100+</p>
                 </div>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-sm'>
+                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p>Shipping:</p>
                     <p>60 days</p>
                 </div>
-                <div className='flex justify-between px-1  text-[#7c7a7a] text-sm'>
+                <div className='flex justify-between px-1  text-[#7c7a7a] text-[5pt] md:text-[10pt] xl:text-[10pt] lg:text-[10pt]'>
                     <p className='items-center'>Rating:</p>
                     <p className='items-center flex'>
-                        <FaStar size={12} color='yellow' />
-                        <FaStar size={12} color='yellow' />
-                        <FaStar size={12} color='yellow' />
-                        <FaStar size={12} color='yellow' />
-                        <FaStar size={12} color='gray' />
+                        <FaStar color='yellow' />
+                        <FaStar color='yellow' />
+                        <FaStar color='yellow' />
+                        <FaStar color='yellow' />
+                        <FaStar color='gray' />
                     </p>
                 </div>
             </CardContent>
-            <div className='pt-10 flex gap-2 justify-center items-center p-2'>
+            <div className='pt-5 flex gap-2 justify-center items-center p-2'>
                 <Button onClick={() => nextPath(1)} className='  rounded-t-sm rounded-md rounded-r-lg bg-[#66b641] hover:bg-[#6bc541] w-full gap-1'><FaEye size={18} color='gray' /> Preview</Button>
                 <Button onClick={() => toast({
                     title: "Save For Later",
