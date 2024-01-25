@@ -28,7 +28,7 @@ export default function ProductDetail() {
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2'>
               <div className='pr-4'>
                 <div className="rounded-md">
-                  <img src={require("src/assets/images/product/tshirt-4.png")} alt="" />
+                  <img src={require("src/assets/images/product/tshirt-2.png")} alt="" />
                 </div>
                 <div className='flex gap-3 justify-center mt-2'>
                   <button className=' border border-slate-300'>
@@ -119,8 +119,8 @@ export default function ProductDetail() {
         </Card>
 
       </div>
-      <Card className='px-5 border-b mx-3 shadow-2xl mb-3 py-2 rounded-l-none border-t-0'>
-        <p className=' text-muted-foreground font-bold sm:text-center text-xl border-b'>
+      <Card className='px-2 border-b mx-3 shadow-2xl mb-3 py-2 rounded-l-none border-t-0'>
+        <p className='px-4 py-2 text-muted-foreground font-bold text-center lg:text-start md:text-start xl:text-start text-xl border-b'>
           Related Items
         </p>
         <div className='container px-1 md:px-4  lg:px-4 xl:px-4 my-5 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xlg:grid-cols-5  gap-4'>
