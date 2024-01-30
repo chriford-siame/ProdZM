@@ -26,15 +26,15 @@ export default function ProductCart() {
               <p className='text-muted-foreground font-bold text-[20pt] pb-3'>Payment Methods</p>
               <div className='text-muted-foreground pb-3'>
                 <RadioGroup defaultValue="paypal">
-                  <div className="flex border-b pb-3 items-center space-x-2">
+                  <div className="flex border-b border-b-gray-100 pb-3 items-center space-x-2">
                     <RadioGroupItem value="paypal" id="paypal" />
                     <Label htmlFor="paypal" className='flex gap-1'> <FaPaypal /> Paypal</Label>
                   </div>
-                  <div className="flex border-b pb-3 items-center space-x-2">
+                  <div className="flex border-b border-b-gray-100 pb-3 items-center space-x-2">
                     <RadioGroupItem value="visaCard" id="visaCard" />
                     <Label htmlFor="visaCard" className='flex gap-1'><FaCcMastercard /> Visa</Label>
                   </div>
-                  <div className="flex border-b pb-3 items-center space-x-2">
+                  <div className="flex border-b border-b-gray-100 pb-3 items-center space-x-2">
                     <RadioGroupItem value="googlePay" id="googlePay" />
                     <Label htmlFor="googlePay" className='flex gap-1'><FaGooglePay /> Google pay</Label>
                   </div>
@@ -49,11 +49,27 @@ export default function ProductCart() {
           <div className=''>
             <Card className='p-1 px-4 w-full h-full'>
               <p className='text-muted-foreground font-bold text-[20pt] text-start'>Summary</p>
-              <div className='pl-0 float-first'>
-                <ShippingDetailFormModal
-                  icon={<Plus size={20} className='text-muted-foreground' />}
-                  text='Edit or add new shipping details'
-                />
+              <div className='text-muted-foreground border-b border-b-gray-100 pb-3'>
+                <div className='flex justify-between py-1'>
+                  <div>Total item costs</div>
+                  <div>$0.99</div>
+                </div>
+                <div className='flex justify-between py-1'>
+                  <div>Total shipping</div>
+                  <div>Free</div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between">
+                  <div className=' font-semibold'>Total</div>
+                  <div className=' text-[18pt]'>$0.99</div>
+                </div>
+              </div>
+              <div className='text-sm text-muted-foreground'>
+                <Button className='w-full' variant={'default'}>Paypal</Button>
+                <p className='p-4 text-center'>
+                  Upon clicking 'Place Order', I confirm I have read and acknowledged all <a href="#" className=' text-blue-500'>terms and policies.</a>
+                </p>
               </div>
             </Card>
           </div>
