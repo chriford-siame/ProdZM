@@ -27,9 +27,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 
 interface IProps {
-    ButtonElement: React.JSX.Element;
+    icon: React.JSX.Element | null;
+    text: string;
 }
-function ShippingDetailFormModal() {
+function ShippingDetailFormModal(props: IProps) {
     const currentUserID = 1;//userDetails;
     const [message, setMessage] = useState('')
     const [detail, setDetail] = useState({
@@ -66,7 +67,7 @@ function ShippingDetailFormModal() {
         <Dialog>
             <DialogTrigger asChild>
                 <Button variant={'link'} style={{ textDecoration: 'none' }}>
-                    <Edit2Icon size={20} className=' text-muted-foreground' /> <span className=' text-blue-400'>Edit or add new shipping details</span>
+                    {props.icon} <span className='text-blue-400 pl-1'>{props.text}</span>
                 </Button>
             </DialogTrigger>
             <DialogContent className="max-w-5xl ">
@@ -76,67 +77,11 @@ function ShippingDetailFormModal() {
 
                 <Tabs defaultValue="editCurrent" className="">
                     <TabsList className="grid w-full grid-cols-2">
-                        <TabsTrigger value="editCurrent">Add</TabsTrigger>
-                        <TabsTrigger value="addNew">Edit</TabsTrigger>
+                        <TabsTrigger value="addNew">Add</TabsTrigger>
+                        <TabsTrigger value="editCurrent">Edit</TabsTrigger>
                     </TabsList>
-                    <TabsContent value="editCurrent">
-                        <form method="post" onSubmit={e => handleSubmit}>
-                            <div className="grid mb-2">
-                                <Input
-                                    name="address"
-                                    id="address"
-                                    defaultValue={detail.address}
-                                    placeholder="Shipping address"
-                                    onChange={(e: any) => setDetail({ ...detail, address: e.target.value })}
-                                />
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  xl:grid-cols-2 gap-2 items-center">
-                                <div className="grid gap-2">
-                                    <Input
-                                        name="contactName"
-                                        id="province"
-                                        defaultValue={detail.province}
-                                        placeholder="State/Province"
-                                        onChange={(e: any) => setDetail({ ...detail, province: e.target.value })}
-                                    />
-                                </div>
-                                <div className="grid gap-2">
-                                    <Input
-                                        name="phoneNumber"
-                                        id="city"
-                                        defaultValue={detail.city}
-                                        placeholder="City"
-                                        onChange={(e: any) => setDetail({ ...detail, city: e.target.value })}
-                                    />
-                                </div>
-                                <div className="grid gap-2">
-                                    <Input
-                                        name="province"
-                                        id="contactName"
-                                        defaultValue={detail.contactName}
-                                        placeholder="Contact name"
-                                        onChange={(e: any) => setDetail({ ...detail, contactName: e.target.value })}
-                                    />
-                                </div>
-                                <div className="grid gap-2">
-                                    <Input
-                                        name="city"
-                                        id="phoneNumber"
-                                        defaultValue={detail.phoneNumber}
-                                        placeholder="Phone No"
-                                        onChange={(e: any) => setDetail({ ...detail, phoneNumber: e.target.value })}
-                                    />
-                                </div>
-                            </div>
-                            <div className="flex gap-1 justify-center border-t mt-3 pt-1">
-                                <Button type="submit" className="w-full" variant="default">
-                                    Update
-                                </Button>
-                            </div>
-                        </form>
-                    </TabsContent>
                     <TabsContent value="addNew">
-                        <form method="post" onSubmit={e => handleSubmit}>
+                        <form id="addForm" method="post" onSubmit={e => handleSubmit}>
                             <div className="grid mb-2">
                                 <Input
                                     name="address"
@@ -186,11 +131,68 @@ function ShippingDetailFormModal() {
                             </div>
                             <div className="flex gap-1 justify-center border-t mt-3 pt-1">
                                 <Button type="submit" className="w-full" variant="default">
+                                    Update
+                                </Button>
+                            </div>
+                        </form>
+                    </TabsContent>
+                    <TabsContent value="editCurrent">
+                        <form id="editForm" method="post" onSubmit={e => handleSubmit}>
+                            <div className="grid mb-2">
+                                <Input
+                                    name="address"
+                                    id="address"
+                                    defaultValue={detail.address}
+                                    placeholder="Shipping address"
+                                    onChange={(e: any) => setDetail({ ...detail, address: e.target.value })}
+                                />
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  xl:grid-cols-2 gap-2 items-center">
+                                <div className="grid gap-2">
+                                    <Input
+                                        name="contactName"
+                                        id="province"
+                                        defaultValue={detail.province}
+                                        placeholder="State/Province"
+                                        onChange={(e: any) => setDetail({ ...detail, province: e.target.value })}
+                                    />
+                                </div>
+                                <div className="grid gap-2">
+                                    <Input
+                                        name="phoneNumber"
+                                        id="city"
+                                        defaultValue={detail.city}
+                                        placeholder="City"
+                                        onChange={(e: any) => setDetail({ ...detail, city: e.target.value })}
+                                    />
+                                </div>
+                                <div className="grid gap-2">
+                                    <Input
+                                        name="province"
+                                        id="contactName"
+                                        defaultValue={detail.contactName}
+                                        placeholder="Contact name"
+                                        onChange={(e: any) => setDetail({ ...detail, contactName: e.target.value })}
+                                    />
+                                </div>
+                                <div className="grid gap-2">
+                                    <Input
+                                        name="city"
+                                        id="phoneNumber"
+                                        defaultValue={detail.phoneNumber}
+                                        placeholder="Phone No"
+                                        onChange={(e: any) => setDetail({ ...detail, phoneNumber: e.target.value })}
+                                    />
+                                </div>
+                            </div>
+                            <div className="flex gap-1 justify-center border-t mt-3 pt-1">
+                                <Button type="submit" className="w-full" variant="default">
                                     Create
                                 </Button>
                             </div>
                         </form>
                     </TabsContent>
+
                 </Tabs>
 
             </DialogContent>
