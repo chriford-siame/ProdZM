@@ -27,9 +27,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 
 interface IProps {
-    ButtonElement: React.JSX.Element;
+    icon: React.JSX.Element | null;
+    text: string;
 }
-function ShippingDetailFormModal() {
+function ShippingDetailFormModal(props: IProps) {
     const currentUserID = 1;//userDetails;
     const [message, setMessage] = useState('')
     const [detail, setDetail] = useState({
@@ -66,7 +67,7 @@ function ShippingDetailFormModal() {
         <Dialog>
             <DialogTrigger asChild>
                 <Button variant={'link'} style={{ textDecoration: 'none' }}>
-                    <Edit2Icon size={20} className=' text-muted-foreground' /> <span className=' text-blue-400'>Edit or add new shipping details</span>
+                    {props.icon} <span className='text-blue-400 pl-1'>{props.text}</span>
                 </Button>
             </DialogTrigger>
             <DialogContent className="max-w-5xl ">
