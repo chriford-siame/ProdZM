@@ -36,10 +36,10 @@ export default function ProductCard() {
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger>
-                                <a href='/product/13/detail' className=' text-[11pt] md:text-[12pt] xl:text-[12pt] lg:text-[12pt] '>Truncate2 25 chars...</a>
+                                <a href='/product/13/detail' className=' text-[11pt] md:text-[12pt] xl:text-[12pt] lg:text-[12pt] '>Watch</a>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <a href='/product/13/detail' className='text-[#7c7a7a]'>Full title here</a>
+                                <a href='/product/13/detail' className='text-[#7c7a7a]'>Truncate2 25 chars...</a>
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
