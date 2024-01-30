@@ -15,7 +15,7 @@ export default function ProductCart() {
           <div className='grid grid-cols-1 gap-3'>
             <Card className='p-1 px-4 w-full'>
               <p className='text-muted-foreground font-bold text-[20pt] text-start'>Shipping Address</p>
-              <div className='pl-0 float-first'>
+              <div className='pl-0'>
                 <ShippingDetailFormModal
                   icon={<Plus size={20} className=' text-muted-foreground' />}
                   text='Edit or add new shipping details'
@@ -26,15 +26,15 @@ export default function ProductCart() {
               <p className='text-muted-foreground font-bold text-[20pt] pb-3'>Payment Methods</p>
               <div className='text-muted-foreground pb-3'>
                 <RadioGroup defaultValue="paypal">
-                  <div className="flex items-center space-x-2">
+                  <div className="flex border-b pb-3 items-center space-x-2">
                     <RadioGroupItem value="paypal" id="paypal" />
                     <Label htmlFor="paypal" className='flex gap-1'> <FaPaypal /> Paypal</Label>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex border-b pb-3 items-center space-x-2">
                     <RadioGroupItem value="visaCard" id="visaCard" />
                     <Label htmlFor="visaCard" className='flex gap-1'><FaCcMastercard /> Visa</Label>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex border-b pb-3 items-center space-x-2">
                     <RadioGroupItem value="googlePay" id="googlePay" />
                     <Label htmlFor="googlePay" className='flex gap-1'><FaGooglePay /> Google pay</Label>
                   </div>
