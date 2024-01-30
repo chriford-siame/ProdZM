@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Card } from '../../ui/card';
 import { Button } from '../../ui/button';
 import ShippingDetailFormModal from './ShippingDetailForm';
-import { Contact2, DollarSign, GlobeIcon, ListChecksIcon, ListMinus, ListTodo, LocateFixedIcon, LocateIcon, Map, MapPinIcon, Phone, PhoneIcon, Star, User, UserIcon } from 'lucide-react';
+import { Contact2, DollarSign, Edit2Icon, GlobeIcon, ListChecksIcon, ListMinus, ListTodo, LocateFixedIcon, LocateIcon, Map, MapPinIcon, Phone, PhoneIcon, Star, User, UserIcon } from 'lucide-react';
 import ProductCard from '../Card';
 import DetailCard from './Card';
 
@@ -89,7 +89,12 @@ export default function ProductDetail() {
                 </div>
                 <div>
                   <p className='text-center border-b text-muted-foreground text-[11pt] py-2 flex justify-center cursor-pointer'>
-                    <ShippingDetailFormModal />
+                    
+
+                    <ShippingDetailFormModal
+                      icon={<Edit2Icon size={20} className=' text-muted-foreground' />}
+                      text='Edit or add new shipping details'
+                    />
                   </p>
                 </div>
                 <div className='flex justify-between text-muted-foreground text-[12pt] py-2'>
@@ -124,17 +129,17 @@ export default function ProductDetail() {
           Related Items
         </p>
         <div className='container px-1 md:px-4  lg:px-4 xl:px-4 my-5 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xlg:grid-cols-5  gap-4'>
-        <DetailCard />
-        <DetailCard />
-        <DetailCard />
-        <DetailCard />
-        <DetailCard />
-        <DetailCard />
-        <DetailCard />
-        <DetailCard />
-        <DetailCard />
-        <DetailCard />
-      </div>
+          <DetailCard />
+          <DetailCard />
+          <DetailCard />
+          <DetailCard />
+          <DetailCard />
+          <DetailCard />
+          <DetailCard />
+          <DetailCard />
+          <DetailCard />
+          <DetailCard />
+        </div>
       </Card>
     </React.Fragment>
   )
