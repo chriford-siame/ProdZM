@@ -76,67 +76,11 @@ function ShippingDetailFormModal() {
 
                 <Tabs defaultValue="editCurrent" className="">
                     <TabsList className="grid w-full grid-cols-2">
-                        <TabsTrigger value="editCurrent">Add</TabsTrigger>
-                        <TabsTrigger value="addNew">Edit</TabsTrigger>
+                        <TabsTrigger value="addNew">Add</TabsTrigger>
+                        <TabsTrigger value="editCurrent">Edit</TabsTrigger>
                     </TabsList>
-                    <TabsContent value="editCurrent">
-                        <form method="post" onSubmit={e => handleSubmit}>
-                            <div className="grid mb-2">
-                                <Input
-                                    name="address"
-                                    id="address"
-                                    defaultValue={detail.address}
-                                    placeholder="Shipping address"
-                                    onChange={(e: any) => setDetail({ ...detail, address: e.target.value })}
-                                />
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  xl:grid-cols-2 gap-2 items-center">
-                                <div className="grid gap-2">
-                                    <Input
-                                        name="contactName"
-                                        id="province"
-                                        defaultValue={detail.province}
-                                        placeholder="State/Province"
-                                        onChange={(e: any) => setDetail({ ...detail, province: e.target.value })}
-                                    />
-                                </div>
-                                <div className="grid gap-2">
-                                    <Input
-                                        name="phoneNumber"
-                                        id="city"
-                                        defaultValue={detail.city}
-                                        placeholder="City"
-                                        onChange={(e: any) => setDetail({ ...detail, city: e.target.value })}
-                                    />
-                                </div>
-                                <div className="grid gap-2">
-                                    <Input
-                                        name="province"
-                                        id="contactName"
-                                        defaultValue={detail.contactName}
-                                        placeholder="Contact name"
-                                        onChange={(e: any) => setDetail({ ...detail, contactName: e.target.value })}
-                                    />
-                                </div>
-                                <div className="grid gap-2">
-                                    <Input
-                                        name="city"
-                                        id="phoneNumber"
-                                        defaultValue={detail.phoneNumber}
-                                        placeholder="Phone No"
-                                        onChange={(e: any) => setDetail({ ...detail, phoneNumber: e.target.value })}
-                                    />
-                                </div>
-                            </div>
-                            <div className="flex gap-1 justify-center border-t mt-3 pt-1">
-                                <Button type="submit" className="w-full" variant="default">
-                                    Update
-                                </Button>
-                            </div>
-                        </form>
-                    </TabsContent>
                     <TabsContent value="addNew">
-                        <form method="post" onSubmit={e => handleSubmit}>
+                        <form id="addForm" method="post" onSubmit={e => handleSubmit}>
                             <div className="grid mb-2">
                                 <Input
                                     name="address"
@@ -186,11 +130,68 @@ function ShippingDetailFormModal() {
                             </div>
                             <div className="flex gap-1 justify-center border-t mt-3 pt-1">
                                 <Button type="submit" className="w-full" variant="default">
+                                    Update
+                                </Button>
+                            </div>
+                        </form>
+                    </TabsContent>
+                    <TabsContent value="editCurrent">
+                        <form id="editForm" method="post" onSubmit={e => handleSubmit}>
+                            <div className="grid mb-2">
+                                <Input
+                                    name="address"
+                                    id="address"
+                                    defaultValue={detail.address}
+                                    placeholder="Shipping address"
+                                    onChange={(e: any) => setDetail({ ...detail, address: e.target.value })}
+                                />
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  xl:grid-cols-2 gap-2 items-center">
+                                <div className="grid gap-2">
+                                    <Input
+                                        name="contactName"
+                                        id="province"
+                                        defaultValue={detail.province}
+                                        placeholder="State/Province"
+                                        onChange={(e: any) => setDetail({ ...detail, province: e.target.value })}
+                                    />
+                                </div>
+                                <div className="grid gap-2">
+                                    <Input
+                                        name="phoneNumber"
+                                        id="city"
+                                        defaultValue={detail.city}
+                                        placeholder="City"
+                                        onChange={(e: any) => setDetail({ ...detail, city: e.target.value })}
+                                    />
+                                </div>
+                                <div className="grid gap-2">
+                                    <Input
+                                        name="province"
+                                        id="contactName"
+                                        defaultValue={detail.contactName}
+                                        placeholder="Contact name"
+                                        onChange={(e: any) => setDetail({ ...detail, contactName: e.target.value })}
+                                    />
+                                </div>
+                                <div className="grid gap-2">
+                                    <Input
+                                        name="city"
+                                        id="phoneNumber"
+                                        defaultValue={detail.phoneNumber}
+                                        placeholder="Phone No"
+                                        onChange={(e: any) => setDetail({ ...detail, phoneNumber: e.target.value })}
+                                    />
+                                </div>
+                            </div>
+                            <div className="flex gap-1 justify-center border-t mt-3 pt-1">
+                                <Button type="submit" className="w-full" variant="default">
                                     Create
                                 </Button>
                             </div>
                         </form>
                     </TabsContent>
+
                 </Tabs>
 
             </DialogContent>
