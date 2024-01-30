@@ -23,7 +23,10 @@ export default function ProductCart() {
               </div>
             </Card>
             <Card className='p-1 px-4 w-full'>
-              <p className='text-muted-foreground font-bold text-[20pt] pb-3'>Payment Methods</p>
+              <div className="flex justify-between items-center pb-3">
+                <p className='text-muted-foreground font-bold text-[20pt] pb-3'>Payment Methods</p>
+                <a href="#modal" className=' text-blue-400'>view more</a>
+              </div>
               <div className='text-muted-foreground pb-3'>
                 <RadioGroup defaultValue="paypal">
                   <div className="flex border-b border-b-gray-100 pb-3 items-center space-x-2">
@@ -60,9 +63,14 @@ export default function ProductCart() {
                 </div>
               </div>
               <div>
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center pb-2">
                   <div className=' font-semibold'>Total</div>
-                  <div className=' text-[18pt]'>$0.99</div>
+                  <div className=' text-[18pt]'>
+                    <p>
+                      $0.99
+                    </p>
+                    <p className="text-[10pt]">=(ZK30.00)</p>
+                  </div>
                 </div>
               </div>
               <div className='text-sm text-muted-foreground'>
