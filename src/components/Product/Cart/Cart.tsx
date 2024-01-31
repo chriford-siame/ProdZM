@@ -10,21 +10,21 @@ import { FaCcMastercard, FaGooglePay, FaPaypal } from 'react-icons/fa'
 export default function ProductCart() {
   return (
     <React.Fragment>
-      <div className='w-screen'>
-        <div className="p-10 grid grid-cols-2 gap-3">
+      <div className=''>
+        <div className="p-2 px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:grid-cols-2  gap-3">
           <div className='grid grid-cols-1 gap-3'>
             <Card className='p-1 px-4 w-full'>
-              <p className='text-muted-foreground font-bold text-[20pt] text-start'>Shipping Address</p>
+              <p className='text-muted-foreground font-bold text-[16pt] text-start'>Shipping Address</p>
               <div className='pl-0'>
                 <ShippingDetailFormModal
                   icon={<Plus size={20} className=' text-muted-foreground' />}
-                  text='Edit or add new shipping details'
+                  text='Add or Update'
                 />
               </div>
             </Card>
             <Card className='p-1 px-4 w-full'>
               <div className="flex justify-between items-center pb-3">
-                <p className='text-muted-foreground font-bold text-[20pt] pb-3'>Payment Methods</p>
+                <p className='text-muted-foreground font-bold text-[16pt]'>Payment Methods</p>
                 <a href="#modal" className=' text-blue-400'>view more</a>
               </div>
               <div className='text-muted-foreground pb-3'>
@@ -49,9 +49,9 @@ export default function ProductCart() {
               </div>
             </Card>
           </div>
-          <div className=''>
+          <div className='mx-0 lg:mx-5 md:mx-5'>
             <Card className='p-1 px-4 w-full h-full'>
-              <p className='text-muted-foreground font-bold text-[20pt] text-start'>Summary</p>
+              <p className='text-muted-foreground font-bold text-[16pt] text-start'>Summary</p>
               <div className='text-muted-foreground border-b border-b-gray-100 pb-3'>
                 <div className='flex justify-between py-1'>
                   <div>Total item costs</div>
@@ -67,7 +67,7 @@ export default function ProductCart() {
                   <div className=' font-semibold'>Total</div>
                   <div className=' text-[18pt]'>
                     <p>
-                      $0.99
+                      $2.19
                     </p>
                     <p className="text-[10pt]">=(ZK30.00)</p>
                   </div>
