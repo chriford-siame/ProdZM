@@ -6,11 +6,12 @@ import ShippingDetailFormModal from '../Detail/ShippingDetailForm'
 import { RadioGroup, RadioGroupItem } from '../../ui/radio-group'
 import { Label } from '../../ui/label'
 import { FaCcMastercard, FaGooglePay, FaPaypal } from 'react-icons/fa'
+import ProductCartCard from './Card'
 
 export default function ProductCart() {
   return (
     <React.Fragment>
-      <div className=''>
+      <div className='grid'>
         <div className="p-2 px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:grid-cols-2  gap-3">
           <div className='grid grid-cols-1 gap-3'>
             <Card className='p-1 px-4 w-full'>
@@ -25,7 +26,7 @@ export default function ProductCart() {
             <Card className='p-1 px-4 w-full'>
               <div className="flex justify-between items-center pb-3">
                 <p className='text-muted-foreground font-bold text-[16pt]'>Payment Methods</p>
-                <a href="#modal" className=' text-blue-400'>view more</a>
+                <a href="#modal" className=' text-blue-400 ml-2'>view all</a>
               </div>
               <div className='text-muted-foreground pb-3'>
                 <RadioGroup defaultValue="paypal">
@@ -82,7 +83,19 @@ export default function ProductCart() {
             </Card>
           </div>
         </div>
+        <div className='p-2 px-2 pr-7 h-screen'>
+          <div className='grid grid-cols-1 md:grid-cols-1 gap-2 lg:grid-cols-1 py-4 pr-2-contain '>
+            <ProductCartCard />
+            <ProductCartCard />
+            <ProductCartCard />
+            <ProductCartCard />
+            <ProductCartCard />
+            <ProductCartCard />
+            <ProductCartCard />
+            <ProductCartCard />
+          </div>
+        </div>
       </div>
-    </React.Fragment>
+    </React.Fragment >
   )
 }
