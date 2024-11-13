@@ -11,8 +11,8 @@ import { Bell, ShoppingBasketIcon, ShoppingCart } from 'lucide-react'
 export default function Navbar() {
     return (
         <React.Fragment>
-            <div className='flex container justify-between bg-[#62C6FF] py-3'>
-                <div className='flex items-center '>
+            <div className='flex justify-between bg-[#62C6FF] py-3'>
+                <div className='flex container items-center '>
                     <Sidebar />
                 </div>
                 <div className='hidden md:block lg:block xl:block pt-1'>
