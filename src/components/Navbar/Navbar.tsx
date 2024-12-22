@@ -11,17 +11,18 @@ import { Bell, ShoppingBasketIcon, ShoppingCart } from 'lucide-react'
 export default function Navbar() {
     return (
         <React.Fragment>
-            <div className='flex justify-between bg-[#62C6FF] py-3'>
-                <div className='flex container items-center '>
+            <div className='flex justify-between bg-[#62C6FF] py-3 w-full'>
+                <div className=' flex align-self-center justify-center px-2'>
                     <Sidebar />
                 </div>
+
                 <div className='hidden md:block lg:block xl:block pt-1'>
                     {NavigationMenuDemo()}
                 </div>
                 <div className='block md:hidden lg:hidden xl:hidden pt-1'>
                     {CategoryNavMenu()}
                 </div>
-                <div className='flex gap-6 '>
+                <div className='flex gap-6 pr-3'>
                     <div className='flex gap-1 items-center'>
                         <div className='flex'>
                             <a className='flex' href="/product/cart">
