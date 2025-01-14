@@ -12,7 +12,7 @@ export default function ProductDetail() {
 
   return (
     <React.Fragment>
-      <div className='mb-4'>
+      <div className='mb-4 mx-10'>
         <div className='flex mx-6 mb-4 justify-between py-1 border-b'>
           <div className='flex pr-2'>
             <a href="/" className=' flex text-[#3da3aa] rounded-lg px-2 bg-slate-200 hover:bg-slate-300'>back</a>
@@ -89,7 +89,7 @@ export default function ProductDetail() {
                 </div>
                 <div>
                   <p className='text-center border-b text-muted-foreground text-[11pt] py-2 flex justify-center cursor-pointer'>
-                    
+
 
                     <ShippingDetailFormModal
                       icon={<Edit2Icon size={20} className=' text-muted-foreground' />}
