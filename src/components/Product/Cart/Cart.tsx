@@ -12,7 +12,7 @@ export default function ProductCart() {
   return (
     <React.Fragment>
       <div className='grid'>
-        <div className="p-2 px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:grid-cols-2  gap-3">
+        <div className="container pt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:grid-cols-2  gap-3">
           <div className='grid grid-cols-1 gap-3'>
             <Card className='p-1 px-4 w-full'>
               <p className='text-muted-foreground font-bold text-[16pt] text-start'>Shipping Address</p>
@@ -84,10 +84,7 @@ export default function ProductCart() {
           </div>
         </div>
         <div className='p-2 px-2 pr-7 h-screen'>
-          <div className='grid grid-cols-1 md:grid-cols-1 gap-2 lg:grid-cols-1 py-4 pr-2-contain '>
-            <ProductCartCard />
-            <ProductCartCard />
-            <ProductCartCard />
+          <div className='container grid grid-cols-1 md:grid-cols-1 gap-2 lg:grid-cols-1 py-4 pr-2-contain '>
             <ProductCartCard />
             <ProductCartCard />
             <ProductCartCard />
