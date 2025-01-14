@@ -43,15 +43,17 @@ export default function Login() {
             <span>Or</span>
             <span className='border w-full ml-1 h-[1px]'></span>
           </div>
-          <GoogleLogin
-            onSuccess={(credentialResponse) => {
-              const credentialResponseDecoded = jwtDecode(`${credentialResponse.credential}`);
-              console.log(credentialResponseDecoded)
-            }}
-            onError={() => { 
-              console.log("Failed to login") 
-            }} 
-          /> 
+          <div className="flex justify-center">
+            <GoogleLogin
+              onSuccess={(credentialResponse) => {
+                const credentialResponseDecoded = jwtDecode(`${credentialResponse.credential}`);
+                console.log(credentialResponseDecoded)
+              }}
+              onError={() => { 
+                console.log("Failed to login") 
+              }} 
+            /> 
+          </div>
         </CardFooter>
       </Card>
     </div>

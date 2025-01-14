@@ -1,12 +1,8 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-
 import { Sidebar } from '../Sidebar/Sidebar'
 import { CategoryNavMenu, NavigationMenuDemo } from './Content'
-import { Input } from '../ui/input'
-import { FaCartArrowDown, FaBell, FaSearch } from 'react-icons/fa'
 import ProfileDropDownMenu from './DropDownMenu'
-import { Bell, ShoppingBasketIcon, ShoppingCart } from 'lucide-react'
+import { Bell, ShoppingCart } from 'lucide-react'
 
 export default function Navbar() {
     return (

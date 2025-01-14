@@ -1,8 +1,6 @@
 import { MinusCircle, PenLineIcon, PlusCircle } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../../ui/tooltip'
+import { Card, CardContent } from '../../ui/card'
 import React from 'react'
-import { FaStar } from 'react-icons/fa'
 
 export default function ProductCartCard() {
   return (
@@ -15,7 +13,7 @@ export default function ProductCartCard() {
         <div className='flex justify-between px-1  text-[#7c7a7a] text-[10pt] md:text-[11pt] xl:text-[11pt] lg:text-[11pt]'>
           <div>
             <p className='text-[13pt]'>{'axy axy axy axy axy axy axy axy'}</p>
-            <p className='font-light'>white</p>
+            <p className='font-normal'>white</p>
           </div>
           <PenLineIcon color='gray' size={20} className='cursor-pointer' />
         </div>

@@ -6,7 +6,7 @@ import {
     CardTitle,
 } from "../ui/card"
 import { Button } from '../ui/button'
-import { FaCartPlus, FaEye, FaStar } from 'react-icons/fa'
+import { FaCartPlus, FaStar } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom";
 import { useToast } from '../ui/use-toast';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
@@ -75,14 +75,13 @@ export default function ProductCard() {
                 </div>
             </CardContent>
             <div className='pt-2 flex gap-2 justify-center items-center p-2'>
-                <Button onClick={() => nextPath(1)} size={'icon'} style={{padding: 0}} className='rounded-t-sm rounded-md rounded-r-lg bg-[#66b641] hover:bg-[#6bc541] w-full gap-1'><FaEye size={18} color='lightgray' /> </Button>
+                <Button onClick={() => nextPath(1)} size={'icon'} style={{padding: 0}} className='rounded-t-sm rounded-md rounded-r-lg bg-[#62C6FF] hover:bg-[#62C6FF] w-full gap-1'>View </Button>
                 <Button onClick={() => toast({
                     title: "Save For Later",
                     description: "Item saved to cart successfully",
                     duration: 3500,
-
                 })}
-                    className=' text-white flex items-center justify-center bg-[#d3cfcf] hover:bg-[#bdb8b8]'><FaCartPlus size={18} color='gray' /></Button>
+                    className=' text-white flex items-center justify-center bg-[#738086] hover:bg-[#494949]'><FaCartPlus size={18} color='lightgray' /></Button>
             </div>
         </Card>
     )
