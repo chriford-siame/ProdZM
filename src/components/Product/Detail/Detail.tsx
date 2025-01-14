@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Card } from '../../ui/card';
 import { Button } from '../../ui/button';
 import ShippingDetailFormModal from './ShippingDetailForm';
-import { Contact2, DollarSign, Edit2Icon, GlobeIcon, ListChecksIcon, ListMinus, ListTodo, LocateFixedIcon, LocateIcon, Map, MapPinIcon, Phone, PhoneIcon, Star, User, UserIcon } from 'lucide-react';
-import ProductCard from '../Card';
+import { DollarSign, Edit2Icon, GlobeIcon, ListChecksIcon, ListMinus, ListTodo, LocateIcon, MapPinIcon, PhoneIcon, Star, UserIcon } from 'lucide-react';
 import DetailCard from './Card';
 
 export default function ProductDetail() {

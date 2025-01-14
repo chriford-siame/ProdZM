@@ -1,6 +1,6 @@
 import { Plus } from 'lucide-react'
 import { Button } from '../../ui/button'
-import { Card, CardHeader, CardTitle } from '../../ui/card'
+import { Card } from '../../ui/card'
 import React from 'react'
 import ShippingDetailFormModal from '../Detail/ShippingDetailForm'
 import { RadioGroup, RadioGroupItem } from '../../ui/radio-group'

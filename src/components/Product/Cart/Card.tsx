@@ -1,8 +1,6 @@
 import { MinusCircle, PenLineIcon, PlusCircle } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../../ui/tooltip'
+import { Card, CardContent } from '../../ui/card'
 import React from 'react'
-import { FaStar } from 'react-icons/fa'
 
 export default function ProductCartCard() {
   return (

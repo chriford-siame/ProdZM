@@ -6,7 +6,7 @@ import {
     CardTitle,
 } from "../ui/card"
 import { Button } from '../ui/button'
-import { FaCartPlus, FaEye, FaStar } from 'react-icons/fa'
+import { FaCartPlus, FaStar } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom";
 import { useToast } from '../ui/use-toast';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
