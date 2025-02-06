@@ -26,6 +26,8 @@ export default function ProductCard() {
         let nextPath = `/product/${id}/detail/`;
         navigate(nextPath);
     }
+    const truncatedText = product.name.length > 25 ? product.name.substring(0, 25) + "..." : product.name;
+    const mainImage = product.images.find((img: any) => img.is_main);
 
     return (
         <Card className='hover:-mt-1 shadow-xl hover:shadow-2xl'>
