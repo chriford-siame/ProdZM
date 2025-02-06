@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductCard from './Card'
 import { Checkbox } from '../ui/checkbox'
 import {
@@ -7,8 +7,15 @@ import {
   Search,
   Settings2
 } from 'lucide-react'
+import useProducts from '../../hooks/Products';
+import IProduct from '@/interfaces/products';
 
 export default function ProductList() {
+  const { products, error } = useProducts();
+
+  if (error) return <div className='text-red-500 w-full h-[90vh] flex text-white items-center justify-center'>
+    <p>check your internet connection</p>
+  </div> ;
   return (
     <React.Fragment>
       <div className='p-2 w-full shadow-md'>
@@ -80,16 +87,7 @@ export default function ProductList() {
         </div>
       </div>
       <div className='container px-5 my-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xlg:grid-cols-5  gap-4'>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+      {products.map((product: IProduct) => <ProductCard key={product.id} product={product}/> )}
       </div>
     </React.Fragment>
   )
