@@ -19,8 +19,8 @@ interface IProps {
 export default function ProductCard({product}: IProps) {
     const { toast } = useToast()
     const navigate = useNavigate();
-    const nextPath = (id: string | number) => {
-        let nextPath = `/product/${id}/detail/`;
+    const nextPath = (productData: IProps['product']) => {
+        let nextPath = `/product/${productData.id}/detail/`;
         navigate(nextPath);
     }
     const truncatedText = product.name.length > 25 ? product.name.substring(0, 25) + "..." : product.name;
@@ -77,7 +77,7 @@ export default function ProductCard({product}: IProps) {
                 </div>
             </CardContent>
             <div className='pt-2 flex gap-2 justify-center items-center p-2'>
-                <Button onClick={() => nextPath(product.id)} size={'icon'} style={{padding: 0}} className='rounded-t-sm rounded-md rounded-r-lg bg-[#62C6FF] hover:bg-[#62C6FF] w-full gap-1'>View </Button>
+                <Button onClick={() => nextPath(product)} size={'icon'} style={{padding: 0}} className='rounded-t-sm rounded-md rounded-r-lg bg-[#62C6FF] hover:bg-[#62C6FF] w-full gap-1'>View </Button>
                 <Button onClick={() => toast({
                     title: "Save For Later",
                     description: "Item saved to cart successfully",
