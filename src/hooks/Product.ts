@@ -20,7 +20,7 @@ const useProduct = (id: string | number) => {
       };
   
       fetchProduct();
-    }, []);
+    }, [id]);
   
     return { product, loading, error };
   };
