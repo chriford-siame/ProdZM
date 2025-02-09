@@ -35,12 +35,12 @@ export default function ProductCard({product}: IProps) {
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger>
-                                <a href='/product/0/detail' className=' text-[11pt] md:text-[12pt] xl:text-[12pt] lg:text-[12pt] '>{truncatedText}</a>
+                                <a href={`/product/${product.id}/detail`} className=' text-[11pt] md:text-[12pt] xl:text-[12pt] lg:text-[12pt] '>{truncatedText}</a>
                             </TooltipTrigger>
                             {product.name.length > 25 ? 
                             <TooltipContent>
                                 
-                                <a href='/product/0/detail' className='text-[#7c7a7a]'>{product.name}</a>
+                                <a href={`/product/${product.id}/detail`} className='text-[#7c7a7a]'>{product.name}</a>
                             </TooltipContent>
                             : null}
                         </Tooltip>
