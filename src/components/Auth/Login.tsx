@@ -38,18 +38,18 @@ export default function Login() {
           <form onSubmit={onSubmit}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="email">Email address</Label>
-                <Input id="email" type={'email'} value={username} onChange={(e) => setUsername(e.target.value)} placeholder="example@email.com" />
+                <Label htmlFor="email">Username</Label>
+                <Input id="email" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="example@email.com" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="password">Password</Label>
                 <Input type={'password'} value={password} onChange={(e) => setPassword(e.target.value)} id="password" placeholder="******" />
               </div>
             </div>
+          <Button className='w-full' type='submit'>Submit</Button>
           </form>
         </CardContent>
         <CardFooter className="grid gap-1">
-          <Button className='w-full' type='submit'>Submit</Button>
           <div className='flex justify-center'>
             <p>Don't have an account? <a href='/signup' className=' text-blue-400 hover:text-blue-500'>Signup</a></p>
           </div>
