@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GoogleLogin } from '@react-oauth/google'
 import { Button } from "../ui/button"
 import {
@@ -11,8 +11,23 @@ import {
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
 import { jwtDecode } from 'jwt-decode'
+import { useAuth } from '../../hooks/useAuth'
 
 export default function Login() {
+  const { handleLogin } = useAuth();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await handleLogin(username, password);
+      window.location.href = "/"; // Redirect after login
+    } catch (err) {
+      setError("Invalid credentials");
+    }
+  };
   return (
     <div className='w-screen h-full flex items-center justify-center py-5'>
       <Card className="w-[350px]">
@@ -20,15 +35,15 @@ export default function Login() {
           <CardTitle className=' self-center'>Login</CardTitle>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={onSubmit}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="email">Email address</Label>
-                <Input id="email" type={'email'} placeholder="example@email.com" />
+                <Input id="email" type={'email'} value={username} onChange={(e) => setUsername(e.target.value)} placeholder="example@email.com" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="password">Password</Label>
-                <Input type={'password'} id="password" placeholder="******" />
+                <Input type={'password'} value={password} onChange={(e) => setPassword(e.target.value)} id="password" placeholder="******" />
               </div>
             </div>
           </form>

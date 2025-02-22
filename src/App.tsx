@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from './components/ui/toaster';
 import CustomLoarder from './components/Loaders/Loarder';
+import { useAuth } from './hooks/useAuth';
 
 const ProductList = React.lazy(() => import('./components/Product/List'));
 const ProductEdit = React.lazy(() => import('./components/Product/Edit'));
@@ -22,6 +23,7 @@ const Support = React.lazy(() => import('./components/CustomerCare/Support'));
 const ProductDetail = React.lazy(() => import('./components/Product/Detail/Detail'));
 
 function App() {
+  const { isAuthenticated } = useAuth();
   return (
     <>
       <Navbar />
@@ -60,77 +62,77 @@ function App() {
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <ProductHistory />
+              {isAuthenticated ? <ProductHistory />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="/product/orders" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <ProductOrders />
+              {isAuthenticated ? <ProductOrders />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="/account/settings" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <Settings />
+              {isAuthenticated ? <Settings />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="/dashboard" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <Dashboard />
+              {isAuthenticated ? <Dashboard />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="/product/edit" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <ProductEdit />
+              {isAuthenticated ? <ProductEdit />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="/product/cart" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <ProductCart />
+              {isAuthenticated ? <ProductCart />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="/product/delete" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <ProductDelete />
+              {isAuthenticated ? <ProductDelete />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="/product/create" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <ProductCreate />
+              {isAuthenticated ? <ProductCreate />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="/product/status" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <ProductStatus />
+              {isAuthenticated ? <ProductStatus />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="/support" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <Support />
+              {isAuthenticated ? <Support />: <Navigate to="/login" />}
             </React.Suspense>
           } />
           <Route path="*" element={
             <React.Suspense fallback={
               <CustomLoarder />
             }>
-              <PageNotFound />
+              {isAuthenticated ? <PageNotFound />: <Navigate to="/login" />}
             </React.Suspense>
           } />
         </Routes>
