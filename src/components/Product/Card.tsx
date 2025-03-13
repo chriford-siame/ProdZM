@@ -28,7 +28,7 @@ export default function ProductCard({product}: IProps) {
 
     return (
         <Card className='hover:-mt-1 shadow-xl hover:shadow-2xl'>
-            <img className='w-full md:h-48 xl:h-48 lg:h-52 h-42' src={mainImage ? mainImage.image: ''} alt="" />
+            <img className='w-full md:h-48 xl:h-48 lg:h-52 h-42' src={mainImage && mainImage.image.startsWith('/') ? 'http://localhost:8000'+mainImage.image : mainImage?.image} alt="" />
             <CardHeader className=' items-center px-1.5 -mt-2 pt-0'>
                 <div className='mt-5 w-full border-b'></div>
                 <CardTitle className=' font-semibold text-[#7c7a7a]'>

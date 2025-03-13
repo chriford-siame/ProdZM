@@ -11,7 +11,6 @@ const useProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get<IProduct[]>("http://localhost:8000/products/");
-        console.log(response)
         setProducts(response.data);
       } catch (err) {
         setError("Failed to fetch products.");
