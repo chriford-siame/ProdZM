@@ -13,6 +13,8 @@ import IProduct from '@/interfaces/products';
 export default function ProductList() {
   const { products, error } = useProducts();
 
+  const [search_qs, setSearchQS] = useState('');
+
   if (error) return <div className='text-red-500 w-full h-[90vh] flex text-white items-center justify-center'>
     <p>check your internet connection</p>
   </div> ;
@@ -69,8 +71,8 @@ export default function ProductList() {
 
               </div>
             </div>
-            <div className='flex pr-5 border-t md:border-none lg:border-none xl:border-none mt-2 pt-2 lg:mt-auto xl:mt-auto md:mt-auto'>
-              <input type='text' className=' invalid:border-pink-500 disabled:border-slate-200 border active:border-slate-300 sticky bg-[#ebe6e6] text-[10pt] focus:invalid:border-pink-500    pr-10 rounded-md ml px-2 mr-4 py-0 mx-0' placeholder='Search products' />
+            <form className='flex pr-5 border-t md:border-none lg:border-none xl:border-none mt-2 pt-2 lg:mt-auto xl:mt-auto md:mt-auto'>
+              <input onChange={e => setSearchQS(e.target.value)} value={search_qs} name='qs' type='text' required className=' disabled:border-slate-200 border active:border-slate-300 sticky bg-[#ebe6e6] text-[10pt] focus:invalid:border-pink-500    pr-10 rounded-md ml px-2 mr-4 py-0 mx-0' placeholder='Search products' />
               <button type='submit' className='text-white hover:bg-[#7bcbd1] bg-[#b0caca] z-10 -ml-[50px] p-2 py-1 rounded-md rounded-l-none border-none'>
                 <Search className='cursor-pointer' size={20} color='white' />
               </button>
@@ -82,7 +84,7 @@ export default function ProductList() {
                   <ListOrderedIcon className=' cursor-pointer' size={20} color='gray' />
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
