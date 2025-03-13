@@ -8,14 +8,25 @@ import {
   Settings2
 } from 'lucide-react'
 import useProducts from '../../hooks/Products';
-import IProduct from '@/interfaces/products';
+import FindProducts from '../../hooks/ProductQS';
+import IProduct, { ISearchParams } from '@/interfaces/products';
+
 
 export default function ProductList() {
+  
+  const [search_qs, setSearchQS] = useState<ISearchParams>({
+    price: '',
+    orders: '',
+    qs: '',
+    category: '',
+  });
+  const [tempSearchQs, setTempSearchQs] = useState('');
   const { products, error } = useProducts();
+  const { productsQS, QSerror } = FindProducts(search_qs);
 
-  const [search_qs, setSearchQS] = useState('');
+  const cleanedProducts = productsQS.length != 0 ? productsQS : products; 
 
-  if (error) return <div className='text-red-500 w-full h-[90vh] flex text-white items-center justify-center'>
+  if (error || QSerror) return <div className='text-red-500 w-full h-[90vh] flex text-white items-center justify-center'>
     <p>check your internet connection</p>
   </div> ;
   return (
@@ -71,10 +82,14 @@ export default function ProductList() {
 
               </div>
             </div>
-            <form className='flex pr-5 border-t md:border-none lg:border-none xl:border-none mt-2 pt-2 lg:mt-auto xl:mt-auto md:mt-auto'>
-              <input onChange={e => setSearchQS(e.target.value)} value={search_qs} name='qs' type='text' required className=' disabled:border-slate-200 border active:border-slate-300 sticky bg-[#ebe6e6] text-[10pt] focus:invalid:border-pink-500    pr-10 rounded-md ml px-2 mr-4 py-0 mx-0' placeholder='Search products' />
+            <div className='flex pr-5 border-t md:border-none lg:border-none xl:border-none mt-2 pt-2 lg:mt-auto xl:mt-auto md:mt-auto'>
+              <input onChange={e => setTempSearchQs(e.target.value)} value={tempSearchQs} name='qs' type='text' required className=' disabled:border-slate-200 border active:border-slate-300 sticky bg-[#ebe6e6] text-[10pt] focus:invalid:border-pink-500    pr-10 rounded-md ml px-2 mr-4 py-0 mx-0' placeholder='Search products' />
               <button type='submit' className='text-white hover:bg-[#7bcbd1] bg-[#b0caca] z-10 -ml-[50px] p-2 py-1 rounded-md rounded-l-none border-none'>
-                <Search className='cursor-pointer' size={20} color='white' />
+                <Search onClick={() => {
+                  if(tempSearchQs.trim().length != 0) {
+                    setSearchQS({...search_qs, qs: tempSearchQs})
+                  }
+                }}  className='cursor-pointer' size={20} color='white' />
               </button>
               <div className='flex gap-2 items-center justify-center ml-5 pl-2 border-l'>
                 <div className='bg-[#5ad8d8] rounded-md p-[2px]'>
@@ -84,12 +99,12 @@ export default function ProductList() {
                   <ListOrderedIcon className=' cursor-pointer' size={20} color='gray' />
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
       <div className='container px-5 my-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xlg:grid-cols-5  gap-4'>
-      {products.map((product: IProduct) => <ProductCard key={product.id} product={product}/> )}
+      {cleanedProducts.map((product: IProduct) => <ProductCard key={product.id} product={product}/> )}
       </div>
     </React.Fragment>
   )
