@@ -46,7 +46,7 @@ export default function Login() {
                 <Input type={'password'} value={password} onChange={(e) => setPassword(e.target.value)} id="password" placeholder="******" />
               </div>
             </div>
-          <Button className='w-full' type='submit'>Submit</Button>
+          <Button className='w-full mt-3' type='submit'>Submit</Button>
           </form>
         </CardContent>
         <CardFooter className="grid gap-1">
