@@ -16,7 +16,16 @@ interface IProduct {
     images: IProductImage[];
   }
 
+interface ISearchParams {
+  price: number | ''
+  orders: number | ''
+  qs: string
+  category: string | null
+}
+
 export type {
     IProductImage,
+    ISearchParams,
 };
 export default IProduct;
+
