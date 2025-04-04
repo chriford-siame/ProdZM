@@ -23,7 +23,7 @@ export default function ProductList() {
   const [tempSearchQs, setTempSearchQs] = useState('');
   const { products, error } = useProducts();
   const { productsQS, QSerror } = FindProducts(search_qs);
-
+  
   const cleanedProducts = productsQS.length != 0 ? productsQS : products; 
 
   const handleSearchFormSubmit = (event: React.FormEvent) => {
