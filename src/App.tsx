@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from './components/ui/toaster';
 import CustomLoarder from './components/Loaders/Loarder';
 import { useAuth } from './hooks/useAuth';
+import { AppContext } from './context/app_context';
 
 const ProductList = React.lazy(() => import('./components/Product/List'));
 const ProductEdit = React.lazy(() => import('./components/Product/Edit'));
@@ -22,8 +23,12 @@ const Support = React.lazy(() => import('./components/CustomerCare/Support'));
 
 const ProductDetail = React.lazy(() => import('./components/Product/Detail/Detail'));
 
-function App() {
+const App = () => {
   const { isAuthenticated } = useAuth();
+  const appContext = useContext(AppContext);
+  if (!appContext) {
+    throw new Error('component must be wrapped in a provider');
+  }
   return (
     <>
       <Navbar />
