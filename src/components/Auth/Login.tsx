@@ -73,7 +73,6 @@ export default function Login() {
             <GoogleLogin
               onSuccess={(credentialResponse) => {
                 const credentialResponseDecoded = jwtDecode(`${credentialResponse.credential}`);
-                console.log(credentialResponseDecoded)
               }}
               onError={() => {
                 console.log("Failed to login")
