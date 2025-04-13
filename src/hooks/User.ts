@@ -1,9 +1,8 @@
-import React from "react";
-import { useState, useEffect, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AppContext } from "../context/app_context";
 
-const GetUser = (identifier: number | string) => {
+const useUser = (identifier: number | string) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -31,4 +30,4 @@ const GetUser = (identifier: number | string) => {
   return { user, loading, error };
 };
 
-export default GetUser;
+export default useUser;
