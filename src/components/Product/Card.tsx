@@ -10,7 +10,7 @@ import { FaCartPlus, FaStar } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom";
 import { useToast } from '../ui/use-toast';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
-import IProduct, { IProductImage } from '@/interfaces/products';
+import IProduct, { IProductImage } from 'src/interfaces/products';
 
 interface IProps {
     product: IProduct;

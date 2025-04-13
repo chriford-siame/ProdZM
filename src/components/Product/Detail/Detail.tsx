@@ -6,8 +6,8 @@ import ShippingDetailFormModal from './ShippingDetailForm';
 import { DollarSign, Edit2Icon, GlobeIcon, ListChecksIcon, ListMinus, ListTodo, LocateIcon, MapPinIcon, PhoneIcon, Star, UserIcon } from 'lucide-react';
 import useProduct from '../../../hooks/Product';
 import useProducts from '../../../hooks/Products';
-import IProduct, { IProductImage } from '@/interfaces/products';
 import ProductCard from '../Card';
+import IProduct, { IProductImage } from 'src/interfaces/products';
 
 export default function ProductDetail() {
   const { id } = useParams<{id: string}>();

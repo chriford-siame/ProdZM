@@ -9,7 +9,7 @@ import {
 } from 'lucide-react'
 import useProducts from '../../hooks/Products';
 import FindProducts from '../../hooks/ProductQS';
-import IProduct, { ISearchParams } from '@/interfaces/products';
+import IProduct, { ISearchParams } from 'src/interfaces/products';
 
 
 export default function ProductList() {
