@@ -1,7 +1,9 @@
 import { createContext } from "react";
 
 interface IAppContextType {
-    cartItems: any
+    user: any;
+    setUser: (value: any) => void;
+    cartItems: any;
     setCartItems: (value: any) => void;
 }
 
