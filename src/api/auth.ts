@@ -16,7 +16,7 @@ export const login = async (username: string, password: string) => {
 export const refreshToken = async () => {
   const refresh_token = localStorage.getItem("refresh_token");
   if (!refresh_token) throw new Error("No refresh token found");
-
+  
   const response = await axios.post(`${API_URL}refresh/`, { refresh: refresh_token });
   if (response.data.access) {
     localStorage.setItem("access_token", response.data.access);

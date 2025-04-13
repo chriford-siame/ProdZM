@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import IProduct from "@/interfaces/products";
+import IProduct from "src/interfaces/products";
 
 const useProduct = (id: string | number) => {
     const [product, setProduct] = useState<IProduct>();

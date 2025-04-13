@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   Cloud,
   CreditCard,
@@ -30,8 +30,11 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu"
+import { useAuth } from 'src/hooks/useAuth';
+import { AppContext } from 'src/context/app_context';
 
 export default function ProfileDropDownMenu() {
+  const { handleLogout, isAuthenticated } = useAuth();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -111,11 +114,16 @@ export default function ProfileDropDownMenu() {
           <span>API</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogOut className="mr-2 h-4 w-4" />
-          <span>Log out</span>
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-        </DropdownMenuItem>
+        {
+          isAuthenticated ? <DropdownMenuItem onClick={() => {
+            handleLogout();
+            window.location.href = "/";
+          }}>
+            <LogOut className="mr-2 h-4 w-4" />
+            <span>Log out</span>
+            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+          </DropdownMenuItem> : null
+        }
       </DropdownMenuContent>
     </DropdownMenu>
   )

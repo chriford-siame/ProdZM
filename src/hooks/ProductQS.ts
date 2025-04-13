@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import IProduct, { ISearchParams } from "@/interfaces/products";
+import IProduct, { ISearchParams } from "src/interfaces/products";
 
 const FindProducts = (qs: ISearchParams) => {
   const [productsQS, setProductsQS] = useState<IProduct[]>([]);

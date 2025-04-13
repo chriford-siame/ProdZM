@@ -7,9 +7,9 @@
       "esnext"
     ],
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
+    // "paths": {
+    //   "@/*": ["./src/*"]
+    // },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

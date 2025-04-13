@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { GoogleLogin } from '@react-oauth/google'
 import { Button } from "../ui/button"
 import {
@@ -12,17 +12,28 @@ import { Input } from "../ui/input"
 import { Label } from "../ui/label"
 import { jwtDecode } from 'jwt-decode'
 import { useAuth } from '../../hooks/useAuth'
+import { AppContext } from '../../context/app_context'
+import GetUser from '../../hooks/User'
 
 export default function Login() {
+
   const { handleLogin } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const appContext = useContext(AppContext);
+  if (!appContext) {
+    throw new Error('component must be wrapped in a provider');
+  }
+  const {user, setUser} = appContext;
+  
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await handleLogin(username, password);
+      const userInfo = GetUser(username);
+      alert(JSON.stringify(userInfo));
       window.location.href = "/"; // Redirect after login
     } catch (err) {
       setError("Invalid credentials");
@@ -46,7 +57,7 @@ export default function Login() {
                 <Input type={'password'} value={password} onChange={(e) => setPassword(e.target.value)} id="password" placeholder="******" />
               </div>
             </div>
-          <Button className='w-full mt-3' type='submit'>Submit</Button>
+            <Button className='w-full mt-3' type='submit'>Submit</Button>
           </form>
         </CardContent>
         <CardFooter className="grid gap-1">
@@ -62,12 +73,11 @@ export default function Login() {
             <GoogleLogin
               onSuccess={(credentialResponse) => {
                 const credentialResponseDecoded = jwtDecode(`${credentialResponse.credential}`);
-                console.log(credentialResponseDecoded)
               }}
-              onError={() => { 
-                console.log("Failed to login") 
-              }} 
-            /> 
+              onError={() => {
+                console.log("Failed to login")
+              }}
+            />
           </div>
         </CardFooter>
       </Card>
